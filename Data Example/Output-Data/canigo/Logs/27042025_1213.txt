@@ -1,0 +1,28 @@
+----------
+Starting the PROCESSING PART of "canigo" (Fast Map Matching).
+----------
+    Error type 5 for file 187570034.
+    Error type 3 for file 187581957.
+    Found matching path for file 187589120.
+    Found matching path for file 187591820.
+    Found matching path for file 187598989.
+    Error type 1 for file 187624386.
+    Found matching path for file 187626059.
+    Found matching path for file 187694864.
+    Found matching path for file 187697056.
+    Found matching path for file 187706810.
+Finished the PROCESSING PART of "canigo" (Fast Map Matching).
+----------
+  Processing track 187589120. 1 of 7.
+  Processing track 187591820. 2 of 7.
+  Processing track 187598989. 3 of 7.
+  Processing track 187626059. 4 of 7.
+  Processing track 187694864. 5 of 7.
+  Processing track 187697056. 6 of 7.
+  Processing track 187706810. 7 of 7.
+  Processing edges for file 187591820. 1 of 4.
+  Processing edges for file 187694864. 2 of 4.
+  Processing edges for file 187697056. 3 of 4.
+  Processing edges for file 187706810. 4 of 4.
+Postprocessing done for the zone 'canigo'.
+----------
