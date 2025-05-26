@@ -74,19 +74,6 @@ def apply_elevation_group(elevation_value):
     else:
         return 5        # (more than 2000m)
     
- # Custom binning into 4 levels for total_tracks and average_pace
-def assign_level(value, min_val, max_val):
-    # Define thresholds for 4 levels
-    level_size = (max_val - min_val) / 4
-    if value < min_val + level_size:
-        return 1
-    elif value < min_val + 2 * level_size:
-        return 2
-    elif value < min_val + 3 * level_size:
-        return 3
-    else:
-        return 4
-    
 # Given a list of filtered tracks, gets the partial edges dataframe
 def create_partial_edges_df(list_tracks, edges_df, partial_edges_path):
 
@@ -122,12 +109,24 @@ def create_partial_edges_df(list_tracks, edges_df, partial_edges_path):
     # Create the average pace column
     partial_edges_df['average_pace'] = round(partial_edges_df['list_avg_pace'].apply(lambda paces: np.mean(paces) if paces else None), 2)
 
-    # Create total tracks and pace level categories using quartiles
-    partial_edges_df['total_tracks_level'] = partial_edges_df['total_tracks'].apply(lambda x: assign_level(x, partial_edges_df['total_tracks'].min(), partial_edges_df['total_tracks'].max()))
-    partial_edges_df['average_pace_level'] = partial_edges_df['average_pace'].apply(lambda x: assign_level(x, partial_edges_df['average_pace'].min(), partial_edges_df['average_pace'].max()))
+    # Normalize the average pace column
+    # Calculate the IQR
+    Q1 = partial_edges_df['average_pace'].quantile(0.35)
+    Q3 = partial_edges_df['average_pace'].quantile(0.65)
+    IQR = Q3 - Q1
+
+    # Define the bounds
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    # Calculate the mean without the outliers to put it into the outpliers
+    mean_without_outliers = partial_edges_df.loc[(partial_edges_df['average_pace'] >= lower_bound) & (partial_edges_df['average_pace'] <= upper_bound), 'average_pace'].mean()
+
+    # Apply the values
+    partial_edges_df['average_pace'] = round(partial_edges_df['average_pace'].apply(lambda x: mean_without_outliers if (x < lower_bound or x > upper_bound) else x), 2)
 
     # Reorder the dataframe
-    partial_edges_df = partial_edges_df[['id','average_pace','average_pace_level','total_tracks','total_tracks_level','list_tracks','geometry']]
+    partial_edges_df = partial_edges_df[['id','average_pace','total_tracks','list_tracks','geometry']]
 
     return partial_edges_df
 

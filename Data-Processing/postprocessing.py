@@ -16,8 +16,8 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", message="Could not find the number of physical cores")
 warnings.filterwarnings("ignore", category=SettingWithCopyWarning)
 
-
-center_coords_dict = {"canigo": (2.5, 42.5), "matagalls": (2.4, 41.825), "vallferrera": (1.35, 42.6)}
+# Dictionary with the center coordinates
+center_coords_dict = {"canigo": (2.5, 42.5), "matagalls": (2.4, 41.825), "vallferrera": (1.35, 42.6), "exemple": (2.4, 41.825)}
 
 # Generates the edges dataframe
 def generate_edges_df(osm_data_path):
@@ -32,7 +32,7 @@ def generate_edges_df(osm_data_path):
     # Sort the columns depending on u, and create an edge id
     edges_df = edges_df.sort_values(by='u').reset_index(drop=True)
     edges_df['id'] = range(1, len(edges_df) + 1)
-
+    
     # Reorder the dataframe
     edges_df = edges_df[['id','u','v','geometry']]
 
@@ -165,10 +165,7 @@ def create_km_partial_df(track_df):
         line = LineString(zip(coords_subset['lon'], coords_subset['lat']))
         agg_df.at[index, 'geometry'] = line
 
-    # Add a pace level to paint the edges
-    agg_df['pace_level'] = pd.qcut(agg_df['avg_pace'], 4, labels=[1, 2, 3, 4]).astype(int)
-
-    return agg_df[['km','avg_speed','avg_pace','pace_level','elap_time','elap_dist','elap_elev_gain','geometry']]    # Return a cutted df
+    return agg_df[['km','avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]    # Return a cutted df
 
 # Creates a partial dataframe of the track depending on 4 average pace zones
 def create_pace_partial_df(track_df):
@@ -215,13 +212,13 @@ def create_pace_partial_df(track_df):
             metrics_subset = track_df[(track_df['id'] >= row['min_id']) & (track_df['id'] <= (row['max_id']-1))]
 
         # Get the vlaues
-        pace_df.at[index, 'elap_dist'] = metrics_subset['elap_dist'].max()
-        pace_df.at[index, 'elap_time'] = metrics_subset['elap_time'].max()
-        pace_df.at[index, 'elap_elev_gain'] = metrics_subset['elap_elev_gain'].max()
+        pace_df.at[index, 'elap_dist'] = round(metrics_subset['elap_dist'].max(), 2)
+        pace_df.at[index, 'elap_time'] = round(metrics_subset['elap_time'].max(), 2)
+        pace_df.at[index, 'elap_elev_gain'] = round(metrics_subset['elap_elev_gain'].max(), 2)
         pace_df.at[index, 'avg_pace'] = round(metrics_subset['pace'].mean(), 2)
         pace_df.at[index, 'avg_speed'] = round(metrics_subset['speed'].mean(), 2)
 
-    return pace_df[['avg_speed','avg_pace','pace_level','elap_time','elap_dist','elap_elev_gain','geometry']]
+    return pace_df[['avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]
 
 # Creates a partial dataframe for the edges - metrics for each edge
 def create_edges_partial_df(track_df):
@@ -261,16 +258,13 @@ def create_edges_partial_df(track_df):
             metrics_subset = track_df[(track_df['id'] >= row['min_id']) & (track_df['id'] <= (row['max_id']-1))]
 
         # Get the vlaues
-        edges_df.at[index, 'elap_dist'] = metrics_subset['elap_dist'].max()
-        edges_df.at[index, 'elap_time'] = metrics_subset['elap_time'].max()
-        edges_df.at[index, 'elap_elev_gain'] = metrics_subset['elap_elev_gain'].max()
+        edges_df.at[index, 'elap_dist'] = round(metrics_subset['elap_dist'].max(), 2)
+        edges_df.at[index, 'elap_time'] = round(metrics_subset['elap_time'].max(), 2)
+        edges_df.at[index, 'elap_elev_gain'] = round(metrics_subset['elap_elev_gain'].max(), 2)
         edges_df.at[index, 'avg_pace'] = round(metrics_subset['pace'].mean(), 2)
         edges_df.at[index, 'avg_speed'] = round(metrics_subset['speed'].mean(), 2)
 
-    # Add a pace level to paint the edges
-    edges_df['pace_level'] = pd.qcut(edges_df['avg_pace'], 4, labels=[1, 2, 3, 4]).astype(int)
-
-    return edges_df[['edge_id','avg_speed','avg_pace','pace_level','elap_time','elap_dist','elap_elev_gain','geometry']]
+    return edges_df[['edge_id','avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]
 
 # Given a date in string format, returns other metrics
 def obtain_date(input_date):
@@ -494,7 +488,7 @@ def postprocessing_part2(zone, dataframes_path):
     kmeans = KMeans(n_clusters=10, random_state=42)
     tracks_info_df['start_zone'] = kmeans.fit_predict(tracks_info_df[['first_lat', 'first_lon']])
     tracks_info_df['finish_zone'] = kmeans.fit_predict(tracks_info_df[['last_lat', 'last_lon']])
-    
+
     # Reorder the dataframe
     tracks_info_df = tracks_info_df[['track_id','user','title','url','difficulty','date','month','year','season','weekday','total_time',
                                      'total_distance','average_speed','average_pace','elevation_gain','min_temp','max_temp','weather_condition',

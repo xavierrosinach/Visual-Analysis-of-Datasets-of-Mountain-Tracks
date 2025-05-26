@@ -5,8 +5,7 @@ from shapely.geometry import Polygon
 import shutil
 import zipfile
 
-data_path = '../../Data-2'
-bounds_dict = {"canigo": (2.2, 2.7, 42.4, 42.6), "matagalls": (2.3, 2.5, 41.8, 41.9), "vallferrera": (1.2, 1.7, 42.5, 42.8)}
+bounds_dict = {"canigo": (2.2, 2.7, 42.4, 42.6), "matagalls": (2.3, 2.5, 41.8, 41.9), "vallferrera": (1.2, 1.7, 42.5, 42.8), "exemple": (2.3, 2.5, 41.8, 41.9)}
 
 # Unzip the zipped file, and drop all JSON files into the input directory
 def extract_zip_file(data_path, zip_file_path, input_path):

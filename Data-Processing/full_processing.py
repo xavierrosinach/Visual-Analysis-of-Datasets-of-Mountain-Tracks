@@ -27,4 +27,10 @@ def main():
     main_postprocessing(data_path, 'vallferrera')
     main_edges_postprocessing(data_path, 'vallferrera')
 
+    # Example - Matagalls subset
+    main_preprocessing(data_path, 'exemple')
+    main_fmm(data_path, 'exemple')
+    main_postprocessing(data_path, 'exemple')
+    main_edges_postprocessing(data_path, 'exemple')
+
 main()
