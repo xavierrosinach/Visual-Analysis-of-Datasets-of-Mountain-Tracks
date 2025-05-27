@@ -68,7 +68,7 @@ def process_inp_df(input_coords_df):
     input_coords_df['elap_time'] = round(input_coords_df['time_diff'].cumsum() / 60, 2)
 
     # Add the elapsed elevation gain as the cum sum of positive values
-    input_coords_df['elap_elev_gain'] = input_coords_df['elev_diff'].where(input_coords_df['elev_diff'] > 0, 0).cumsum()
+    input_coords_df['elap_elev_gain'] = round(input_coords_df['elev_diff'].where(input_coords_df['elev_diff'] > 0, 0).cumsum(), 2)
 
     # Obtain only the desired columns of the dataframe
     input_coords_df = input_coords_df[['id','lat','lon','elev','elev_diff','dist_diff','time_diff','speed','pace','elap_elev_gain','elap_dist','elap_time']]
@@ -144,15 +144,15 @@ def create_km_partial_df(track_df):
     # Aggregate
     agg_df = grouped.agg(avg_speed=('speed', 'mean'),
                          avg_pace=('pace', 'mean'),
-                         elap_time=('elap_time', lambda x: round(x.max() / 60, 2)),
+                         elap_time=('elap_time', lambda x: round(x.max(), 2)),
                          elap_dist=('elap_dist', lambda x: round(x.max() / 1000, 2)),
-                         elap_elev_gain=('elap_elev_gain', 'max'),
+                         elap_elev_gain=('elap_elev_gain', lambda x: round(x.max(), 2)),
                          min_km_id=('id', 'min'),
                          max_km_id=('id', 'max')).reset_index()
 
     # Edit columns
     agg_df['max_km_id'] = agg_df.apply(lambda row: row['max_km_id'] + 1 if row['km'] != last_km else row['max_km_id'], axis=1).astype(int)      # Fix max_km_id (+1 except for the last)
-    agg_df['elap_dist'] = agg_df['km'].apply(lambda km: 1 if km != last_km else last_km_dist)       # Fix total_km_dist (1 except for the last)
+    agg_df['dist'] = agg_df['km'].apply(lambda km: 1 if km != last_km else last_km_dist)       # Fix total_km_dist (1 except for the last)
     agg_df['avg_speed'] = round(agg_df['avg_speed'], 2)         # Round averages
     agg_df['avg_pace'] = round(agg_df['avg_pace'], 2)           # Round averages
 
@@ -165,7 +165,11 @@ def create_km_partial_df(track_df):
         line = LineString(zip(coords_subset['lon'], coords_subset['lat']))
         agg_df.at[index, 'geometry'] = line
 
-    return agg_df[['km','avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]    # Return a cutted df
+    # Calculate the time difference and elevation gain difference
+    agg_df['time'] = round(agg_df['elap_time'].diff(), 2).fillna(agg_df['elap_time'].iloc[0])
+    agg_df['elev_gain'] = round(agg_df['elap_elev_gain'].diff(), 2).fillna(agg_df['elap_elev_gain'].iloc[0])
+
+    return agg_df[['km','avg_speed','avg_pace','time','dist','elap_elev_gain','geometry']]    # Return a cutted df
 
 # Creates a partial dataframe of the track depending on 4 average pace zones
 def create_pace_partial_df(track_df):
@@ -217,8 +221,13 @@ def create_pace_partial_df(track_df):
         pace_df.at[index, 'elap_elev_gain'] = round(metrics_subset['elap_elev_gain'].max(), 2)
         pace_df.at[index, 'avg_pace'] = round(metrics_subset['pace'].mean(), 2)
         pace_df.at[index, 'avg_speed'] = round(metrics_subset['speed'].mean(), 2)
+    
+    # Calculate the distance, time difference and elevation gain difference
+    pace_df['dist'] = round(pace_df['elap_dist'].diff(), 2).fillna(pace_df['elap_dist'].iloc[0])
+    pace_df['time'] = round(pace_df['elap_time'].diff(), 2).fillna(pace_df['elap_time'].iloc[0])
+    pace_df['elev_gain'] = round(pace_df['elap_elev_gain'].diff(), 2).fillna(pace_df['elap_elev_gain'].iloc[0])
 
-    return pace_df[['avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]
+    return pace_df[['avg_speed','avg_pace','time','dist','elev_gain','geometry']]
 
 # Creates a partial dataframe for the edges - metrics for each edge
 def create_edges_partial_df(track_df):
@@ -264,7 +273,12 @@ def create_edges_partial_df(track_df):
         edges_df.at[index, 'avg_pace'] = round(metrics_subset['pace'].mean(), 2)
         edges_df.at[index, 'avg_speed'] = round(metrics_subset['speed'].mean(), 2)
 
-    return edges_df[['edge_id','avg_speed','avg_pace','elap_time','elap_dist','elap_elev_gain','geometry']]
+    # Calculate the distance, time difference and elevation gain difference
+    edges_df['dist'] = round(edges_df['elap_dist'].diff(), 2).fillna(edges_df['elap_dist'].iloc[0])
+    edges_df['time'] = round(edges_df['elap_time'].diff(), 2).fillna(edges_df['elap_time'].iloc[0])
+    edges_df['elev_gain'] = round(edges_df['elap_elev_gain'].diff(), 2).fillna(edges_df['elap_elev_gain'].iloc[0])
+
+    return edges_df[['edge_id','avg_speed','avg_pace','time','dist','elev_gain','geometry']]
 
 # Given a date in string format, returns other metrics
 def obtain_date(input_date):
