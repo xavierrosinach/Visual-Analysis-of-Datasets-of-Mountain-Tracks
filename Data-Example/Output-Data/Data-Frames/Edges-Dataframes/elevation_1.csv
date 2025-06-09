@@ -1,0 +1,565 @@
+id,avg_pace,pace_group,pace_color,total_tracks,total_tracks_group,total_tracks_color,list_tracks,map_tooltip,map_popup,geometry
+5,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115555882],Edge <b>5</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 5</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3473921 41.801154, 2.3471243 41.8011241, 2.3468198 41.8011298, 2.3467184 41.8011347)"
+6,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115577815],Edge <b>6</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 6</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3473921 41.801154, 2.3473835 41.8014085, 2.3473824 41.8015304, 2.3473757 41.8016066, 2.347368 41.8016522, 2.3473542 41.801686, 2.3473302 41.8017334, 2.3472679 41.8018154, 2.3471785 41.8019146)"
+257,16.74,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>257</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 257</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3479878 41.8011493, 2.3478459 41.8011856, 2.3476497 41.8011096, 2.3476369 41.8010842, 2.347656 41.8010346, 2.3476997 41.8010011, 2.347772 41.8009663)"
+258,18.85,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>258</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 258</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 18:51 min/km</li>
+                        </ul></div>","LINESTRING (2.3479878 41.8011493, 2.3480421 41.8011664, 2.3480949 41.8011772, 2.3481651 41.8012422, 2.3483393 41.8012841, 2.3484456 41.8013379, 2.3485987 41.8013426, 2.3486327 41.8013534, 2.3486623 41.8013992)"
+261,24.88,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>261</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 261</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 24:53 min/km</li>
+                        </ul></div>","LINESTRING (2.3517326 41.8045187, 2.3515419 41.804333, 2.3513264 41.8042315, 2.35115 41.8040171, 2.3510016 41.8038908, 2.3509516 41.8037752, 2.350876 41.8036931, 2.3508217 41.803613, 2.3506923 41.8034729, 2.3505807 41.8033381, 2.3504784 41.8031714, 2.3503135 41.80306, 2.3501452 41.8029681, 2.349847 41.8027858, 2.3497706 41.8026247, 2.3496737 41.8025711, 2.3495363 41.8025167, 2.349345 41.8023992, 2.3492831 41.8023282, 2.3492104 41.8022552, 2.3490729 41.8021172, 2.3489839 41.8019951, 2.3490021 41.80189, 2.3489341 41.8017724, 2.3488236 41.8016967, 2.348692 41.8016573, 2.3486116 41.8016274, 2.3485141 41.8015609, 2.3485181 41.8015012)"
+262,23.92,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>262</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 262</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 23:55 min/km</li>
+                        </ul></div>","LINESTRING (2.3517326 41.8045187, 2.3517698 41.8046184, 2.3518598 41.8047211, 2.3520475 41.8048541, 2.3522108 41.8050145, 2.3524801 41.8052294, 2.3528675 41.8054389, 2.3530538 41.8055253, 2.3532428 41.8056257, 2.3534342 41.8057499, 2.3535766 41.8058049, 2.3537271 41.8058347, 2.3538884 41.8058516, 2.3541735 41.805996, 2.3543318 41.8060287, 2.3544183 41.8060749, 2.3545085 41.806099, 2.3547972 41.806233, 2.3548804 41.8062906, 2.35502 41.8063542, 2.3550729 41.8064109, 2.3551178 41.8064266, 2.3551978 41.8064775, 2.355448 41.8065433, 2.3555033 41.8065345, 2.3555692 41.8065096, 2.3556997 41.8065001, 2.355848 41.8065537, 2.355897 41.8066133, 2.3559544 41.806653, 2.3560446 41.806673, 2.3561808 41.8066855)"
+265,14.29,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115555882],Edge <b>265</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 265</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:17 min/km</li>
+                        </ul></div>","LINESTRING (2.3561808 41.8066855, 2.356358 41.8067622, 2.3563843 41.8068473, 2.3565126 41.8069154, 2.3566632 41.8070319)"
+266,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115555882, 115577815]",Edge <b>266</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 266</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3561808 41.8066855, 2.3564961 41.8067191, 2.3567598 41.8067397)"
+267,18.92,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>267</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 267</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 18:55 min/km</li>
+                        </ul></div>","LINESTRING (2.3604979 41.806263, 2.3608087 41.8063297, 2.361347 41.8064093, 2.3614963 41.8063785, 2.3616362 41.8064116, 2.3617235 41.8064227, 2.3618523 41.8064519, 2.3619109 41.8064946, 2.3620103 41.8065761, 2.3622697 41.8067279)"
+268,15.25,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115555882, 115555882, 115577815]",Edge <b>268</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 268</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 15:15 min/km</li>
+                        </ul></div>","LINESTRING (2.3604979 41.806263, 2.3599064 41.8061475, 2.3597396 41.806138, 2.3595175 41.806112, 2.3593711 41.8061098, 2.3587879 41.8062297, 2.3586623 41.8062508, 2.3585084 41.806353, 2.3584037 41.8064031, 2.3583231 41.8064772, 2.358112 41.8065933, 2.3578717 41.8066869, 2.3574361 41.8067512, 2.3572072 41.8067649, 2.356853 41.806747, 2.3567598 41.8067397)"
+270,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115555882, 115577815]",Edge <b>270</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 270</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3622697 41.8067279, 2.3624587 41.8067666, 2.3625456 41.8067796, 2.3627844 41.8067845, 2.362836 41.8067644, 2.3631157 41.8067244, 2.3634523 41.8066136, 2.3636051 41.8065777, 2.3637675 41.8065642, 2.3640182 41.8065119, 2.3641282 41.8063875, 2.364292 41.8062705, 2.3645747 41.8060992, 2.3648088 41.8058595, 2.3650756 41.8055803, 2.3652654 41.8053919, 2.3653798 41.8053448, 2.3656356 41.8051821, 2.3657751 41.8050508, 2.3658676 41.805009, 2.3659574 41.8050162, 2.3662297 41.8050109, 2.3664402 41.8049439, 2.3667862 41.804665, 2.3670106 41.8045168, 2.3671832 41.804455, 2.367338 41.8044099, 2.367489 41.8043902, 2.3676354 41.8043817, 2.3678514 41.8043961, 2.3679349 41.8044142, 2.3679942 41.8044563, 2.3680968 41.8044446, 2.3683475 41.8045171, 2.3685511 41.8045801, 2.3686989 41.804647, 2.3691814 41.8046447, 2.3696133 41.8046487, 2.3696857 41.804634, 2.3697678 41.8046034, 2.3701518 41.8045391, 2.370577 41.8045369, 2.3709437 41.8045041, 2.3710097 41.8045341, 2.3711065 41.8045452, 2.3712803 41.8045341, 2.3716581 41.8045936, 2.371825 41.8046058, 2.3720776 41.804652, 2.3722897 41.8046712, 2.3724483 41.8046803, 2.3725614 41.8047174, 2.3729832 41.8048829, 2.3733174 41.8049882, 2.3736839 41.8050547)"
+409,20.72,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115577815],Edge <b>409</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 409</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 20:43 min/km</li>
+                        </ul></div>","LINESTRING (2.3471785 41.8019146, 2.3469733 41.8021304, 2.346764 41.8023462, 2.3467176 41.8023972, 2.3466809 41.8024478, 2.3466587 41.8024859, 2.3466452 41.8025248, 2.3466387 41.8025696, 2.3466364 41.8026119, 2.3466394 41.8026496, 2.3466542 41.8026856, 2.3466742 41.8027179, 2.3467065 41.8027552, 2.3467612 41.8028039, 2.3468288 41.8028505, 2.3468899 41.8028829, 2.3469555 41.8029086, 2.3470211 41.802926, 2.3470785 41.8029438, 2.3471123 41.8029566, 2.3471445 41.8029798, 2.3471701 41.8030055, 2.3471863 41.8030307, 2.3471934 41.8030594, 2.3471923 41.803105, 2.3471816 41.8031572, 2.3471545 41.8032052, 2.3471178 41.8032434, 2.3470724 41.8032764, 2.3470109 41.8033043, 2.3465164 41.8034853, 2.3462218 41.8035898, 2.3459321 41.8036941, 2.3456877 41.8037818, 2.3455681 41.8038326, 2.3454451 41.8038958, 2.3453261 41.8039845, 2.3452254 41.8040869, 2.3449212 41.804471, 2.344685 41.804665, 2.3444172 41.8048741, 2.3443188 41.8049907, 2.3442589 41.8051481, 2.3442419 41.8052282, 2.3442257 41.8054065, 2.3442491 41.8055064, 2.3442797 41.805588, 2.3443328 41.8056536, 2.3443941 41.8057102, 2.3444699 41.8057717, 2.3445808 41.8058296, 2.3447702 41.805894, 2.3448448 41.8059387, 2.3448983 41.8060008, 2.344918 41.8060513, 2.3449177 41.8061062, 2.3448849 41.8061685, 2.3447542 41.8062792, 2.3446926 41.806349, 2.3446725 41.8064049, 2.3446725 41.8064738, 2.3446889 41.8065942, 2.3446995 41.8067211, 2.344684 41.8068917, 2.344666 41.8071637, 2.3446481 41.8072478, 2.3446158 41.8072949, 2.3445631 41.807333, 2.3444983 41.8073576, 2.3444414 41.8073657, 2.3443763 41.8073637, 2.3442086 41.8073352, 2.3441085 41.807339, 2.3440234 41.807367, 2.3439595 41.8074158, 2.3438874 41.8074965, 2.3437577 41.8076481, 2.3436787 41.8077285, 2.3433998 41.8079582, 2.3433366 41.8079995, 2.3432673 41.8080378, 2.3431633 41.8080734, 2.3430715 41.8080824, 2.3429919 41.8080748, 2.342783 41.8080501, 2.3421758 41.8079685, 2.3419655 41.8079469, 2.3418355 41.8079482, 2.3417029 41.8079575, 2.3415649 41.8079973, 2.3414337 41.8080671, 2.3413309 41.8081673, 2.3412647 41.8082439, 2.3412012 41.8083265, 2.3410734 41.808553, 2.3409977 41.8087117)"
+426,20.88,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115555882],Edge <b>426</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 426</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 20:53 min/km</li>
+                        </ul></div>","LINESTRING (2.3483515 41.807021, 2.3482512 41.8070355, 2.3482064 41.8069853, 2.3482303 41.8068716, 2.3484337 41.8066196, 2.3486536 41.8062194, 2.3487583 41.8060878, 2.3487673 41.8059841, 2.34867 41.8057099, 2.3483933 41.8052461, 2.34835 41.8050699, 2.3483515 41.8047287, 2.3483814 41.8046418, 2.3484995 41.8045738, 2.3489393 41.8045403, 2.3490365 41.8045069, 2.3491382 41.8044009, 2.3491621 41.8042772, 2.3489273 41.8034131, 2.3488585 41.8033217, 2.3487807 41.8031823, 2.3486581 41.8028099, 2.3485997 41.8027274, 2.3485324 41.8026761, 2.3482049 41.8025546, 2.3481226 41.8024921, 2.3480792 41.802423, 2.3480762 41.802355, 2.348175 41.8020528, 2.3482722 41.8016972, 2.3483141 41.801618, 2.3484397 41.8015288, 2.3485181 41.8015012)"
+505,13.86,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115577815],Edge <b>505</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 505</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 13:52 min/km</li>
+                        </ul></div>","LINESTRING (2.347772 41.8009663, 2.3475991 41.8009434)"
+629,15.03,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812]",Edge <b>629</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 629</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 15:02 min/km</li>
+                        </ul></div>","LINESTRING (2.3937881 41.8447331, 2.3935024 41.845207)"
+630,14.26,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>630</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 630</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:16 min/km</li>
+                        </ul></div>","LINESTRING (2.3937881 41.8447331, 2.3941147 41.8446255, 2.3945897 41.8442451, 2.3950247 41.8439833)"
+631,18.35,From 15 to 30 min/km,#E53888,4,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115429237, 115537812]",Edge <b>631</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 631</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 4</li>
+                            <li><b>Average pace</b>: 18:21 min/km</li>
+                        </ul></div>","LINESTRING (2.3937881 41.8447331, 2.3943835 41.8439385, 2.3941041 41.8438252, 2.3938505 41.8436678, 2.3936783 41.8432821, 2.3936197 41.8429032, 2.3937018 41.8427399, 2.3941939 41.8423002)"
+633,11.61,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>633</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 633</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 11:37 min/km</li>
+                        </ul></div>","LINESTRING (2.388536 41.8451438, 2.3885889 41.845121)"
+636,18.79,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812]",Edge <b>636</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 636</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 18:47 min/km</li>
+                        </ul></div>","LINESTRING (2.3935024 41.845207, 2.3933832 41.8454713, 2.3932376 41.845732, 2.393141 41.8458374, 2.3928448 41.8459365, 2.3927561 41.8460247, 2.392687 41.8461198)"
+637,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>637</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 637</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3935024 41.845207, 2.3929084 41.8450072, 2.3923352 41.8448414)"
+639,14.99,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>639</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 639</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:59 min/km</li>
+                        </ul></div>","LINESTRING (2.3885626 41.8452236, 2.3887014 41.8453405, 2.3889325 41.8454801, 2.3893796 41.8457038)"
+647,13.11,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>647</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 647</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 13:07 min/km</li>
+                        </ul></div>","LINESTRING (2.3893796 41.8457038, 2.3888647 41.8459092, 2.3886117 41.8459595)"
+651,18.81,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>651</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 651</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 18:49 min/km</li>
+                        </ul></div>","LINESTRING (2.3887001 41.8463849, 2.3886628 41.8464265, 2.3886592 41.8464767)"
+652,13.18,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115429237, 115537812]",Edge <b>652</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 652</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 13:11 min/km</li>
+                        </ul></div>","LINESTRING (2.3924564 41.8463644, 2.3922635 41.846439, 2.3919067 41.8465723, 2.3917971 41.8466375, 2.3917776 41.8466826)"
+653,13.57,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115429237, 115537812]",Edge <b>653</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 653</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 13:34 min/km</li>
+                        </ul></div>","LINESTRING (2.3924564 41.8463644, 2.3925567 41.8463051, 2.392687 41.8461198)"
+654,14.25,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>654</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 654</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:15 min/km</li>
+                        </ul></div>","LINESTRING (2.3865207 41.8464325, 2.3875632 41.8464549)"
+657,14.09,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>657</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 657</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:05 min/km</li>
+                        </ul></div>","LINESTRING (2.3875632 41.8464549, 2.3875207 41.8462817, 2.3875762 41.8461653, 2.3877586 41.8460623, 2.3879894 41.8459966, 2.3882481 41.8459732, 2.3885869 41.8459644, 2.3886117 41.8459595)"
+659,17.88,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>659</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 659</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 17:53 min/km</li>
+                        </ul></div>","LINESTRING (2.3887417 41.8464734, 2.3887503 41.8466939, 2.3888084 41.8467735, 2.3888062 41.8469453)"
+662,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115537812]",Edge <b>662</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 662</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3917776 41.8466826, 2.391761 41.8467325, 2.3917915 41.8471112)"
+664,15.44,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>664</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 664</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:26 min/km</li>
+                        </ul></div>","LINESTRING (2.3881637 41.8468573, 2.3882736 41.8469057, 2.3884604 41.84694, 2.3887449 41.8469814)"
+668,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>668</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 668</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3887449 41.8469814, 2.3887507 41.8471873, 2.3888005 41.8473172, 2.3888473 41.847378)"
+672,14.78,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115429237, 115537812]",Edge <b>672</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 672</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 14:47 min/km</li>
+                        </ul></div>","LINESTRING (2.3897061 41.8475154, 2.3897592 41.8475356, 2.3900111 41.8474869, 2.3901294 41.8474034, 2.390178 41.8473635, 2.3902014 41.847307, 2.3902689 41.8472633, 2.3903923 41.8471815, 2.3904115 41.8471451)"
+676,16.58,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>676</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 676</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:35 min/km</li>
+                        </ul></div>","LINESTRING (2.3888473 41.847378, 2.3890163 41.8472872, 2.3892793 41.8473745)"
+679,12.44,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>679</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 679</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:26 min/km</li>
+                        </ul></div>","LINESTRING (2.3892793 41.8473745, 2.3896585 41.8474973)"
+682,15.65,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>682</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 682</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:39 min/km</li>
+                        </ul></div>","LINESTRING (2.388946 41.8475931, 2.3889912 41.8476569, 2.3890462 41.8476919, 2.3891127 41.8477482, 2.3893718 41.8479672)"
+683,14.79,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>683</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 683</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:47 min/km</li>
+                        </ul></div>","LINESTRING (2.3897061 41.8475154, 2.3896585 41.8474973)"
+684,18.31,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>684</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 684</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 18:19 min/km</li>
+                        </ul></div>","LINESTRING (2.3897061 41.8475154, 2.3897193 41.8475422, 2.3901646 41.8476769)"
+694,15.68,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>694</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 694</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:41 min/km</li>
+                        </ul></div>","LINESTRING (2.3896787 41.848221, 2.3893718 41.8479672)"
+897,19.57,From 15 to 30 min/km,#E53888,4,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812, 115537812]",Edge <b>897</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 897</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 4</li>
+                            <li><b>Average pace</b>: 19:34 min/km</li>
+                        </ul></div>","LINESTRING (2.3940148 41.8413496, 2.3942496 41.8413642, 2.3943562 41.8413823)"
+898,19.0,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>898</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 898</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 19:00 min/km</li>
+                        </ul></div>","LINESTRING (2.3940148 41.8413496, 2.3938466 41.8411106, 2.3935805 41.8409619, 2.3930797 41.8407375, 2.3929741 41.8406093, 2.3928528 41.8401312, 2.3927789 41.8398244, 2.3927354 41.8395483, 2.3925359 41.8389653, 2.3923638 41.8385718, 2.3923481 41.8381841, 2.3923713 41.8379769, 2.3923954 41.837953)"
+899,12.92,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>899</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 899</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:55 min/km</li>
+                        </ul></div>","LINESTRING (2.3940148 41.8413496, 2.3937256 41.8411838, 2.3932268 41.8410909, 2.3930071 41.8411373, 2.3928101 41.8411408, 2.3921582 41.8408894)"
+900,12.8,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>900</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 900</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:48 min/km</li>
+                        </ul></div>","LINESTRING (2.3941939 41.8423002, 2.3941978 41.8423849, 2.3940375 41.842626, 2.3941147 41.8427433, 2.3944715 41.8429038)"
+901,16.74,From 15 to 30 min/km,#E53888,4,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812, 115537812]",Edge <b>901</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 901</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 4</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3941939 41.8423002, 2.3946604 41.8418626, 2.394813 41.8417023, 2.3948521 41.8415478, 2.394766 41.8414779, 2.3945587 41.8414167, 2.3943562 41.8413823)"
+1083,14.2,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115555882, 115555882]",Edge <b>1083</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1083</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 14:12 min/km</li>
+                        </ul></div>","LINESTRING (2.3535303 41.8074128, 2.3536937 41.8074451, 2.3539697 41.8075034, 2.3546673 41.8072832, 2.3554264 41.8071578, 2.3561363 41.8070416, 2.3567598 41.8067397)"
+1159,17.68,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1159</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1159</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 17:41 min/km</li>
+                        </ul></div>","LINESTRING (2.3966027 41.8351796, 2.3965462 41.8351588, 2.3964032 41.8350425, 2.3962641 41.834992, 2.3961427 41.8350386, 2.3959441 41.8350852, 2.3958448 41.8351181, 2.395705 41.8351427, 2.395499 41.8351153, 2.3953335 41.8349317, 2.3951764 41.8347031)"
+1160,19.67,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1160</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1160</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 19:40 min/km</li>
+                        </ul></div>","LINESTRING (2.3966027 41.8351796, 2.3966127 41.8351991, 2.3967927 41.8353886, 2.3970744 41.8354586, 2.3973404 41.8354848, 2.3975556 41.8355927, 2.3976339 41.8357034, 2.3975503 41.8358176, 2.3975118 41.8358658, 2.3973916 41.835902, 2.3968905 41.8360562, 2.3964014 41.8362252, 2.3959945 41.8365109, 2.3957005 41.8366429, 2.3954116 41.836919, 2.3951886 41.8372688, 2.3950164 41.8374874, 2.3947699 41.8376681, 2.3946017 41.837709, 2.3944372 41.8376878)"
+1168,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1168</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1168</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3848985 41.8426784, 2.3849895 41.8428393, 2.3851065 41.8429536, 2.385208 41.8431008, 2.3854108 41.8432771, 2.3856852 41.8434773, 2.3858057 41.8435355)"
+1169,14.82,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1169</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1169</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:49 min/km</li>
+                        </ul></div>","LINESTRING (2.3858057 41.8435355, 2.3859538 41.843607)"
+1170,13.41,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1170</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1170</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 13:25 min/km</li>
+                        </ul></div>","LINESTRING (2.3858057 41.8435355, 2.3857828 41.8434399, 2.385718 41.8433672, 2.3856417 41.8432501, 2.3856501 41.8431628, 2.3857646 41.8430369, 2.3858155 41.8429796, 2.3859429 41.8428547, 2.3860717 41.8426908, 2.3861307 41.8423831, 2.386238 41.8421673, 2.3863828 41.8417836, 2.3864477 41.8416218)"
+1171,18.36,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1171</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1171</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 18:22 min/km</li>
+                        </ul></div>","LINESTRING (2.3859538 41.843607, 2.3860199 41.843639, 2.3861634 41.8437185, 2.3863031 41.8437513, 2.3864061 41.8437404, 2.3865165 41.8437431, 2.3865716 41.8438253, 2.3867592 41.8439678, 2.3870572 41.8440692, 2.3874969 41.8441417)"
+1172,12.39,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1172</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1172</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:23 min/km</li>
+                        </ul></div>","LINESTRING (2.3859538 41.843607, 2.38595 41.843713, 2.3858875 41.8438609, 2.3857441 41.8439157, 2.3854388 41.8439651, 2.3850599 41.8440418, 2.3849458 41.8440549)"
+1179,19.01,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1179</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1179</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 19:01 min/km</li>
+                        </ul></div>","LINESTRING (2.3874969 41.8441417, 2.3873735 41.8441925, 2.3872337 41.8442308, 2.3871123 41.8442692, 2.3869652 41.8442829, 2.3866195 41.8443048)"
+1180,19.57,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812]",Edge <b>1180</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1180</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 19:34 min/km</li>
+                        </ul></div>","LINESTRING (2.3874969 41.8441417, 2.387539 41.8441486, 2.3878663 41.8441651, 2.3879914 41.8441843, 2.3882028 41.8444531, 2.3882614 41.8444968)"
+1181,21.72,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115429237]",Edge <b>1181</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1181</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 21:43 min/km</li>
+                        </ul></div>","LINESTRING (2.3866195 41.8443048, 2.3867476 41.84437, 2.3868377 41.8444486, 2.3869754 41.8444954, 2.3871173 41.8445024, 2.3873514 41.8444908, 2.387484 41.8445024, 2.3876427 41.8445179, 2.3877805 41.8445082, 2.3879106 41.8444888)"
+1189,17.23,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1189</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1189</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 17:14 min/km</li>
+                        </ul></div>","LINESTRING (2.3879106 41.8444888, 2.38809 41.8444985, 2.3882614 41.8444968)"
+1190,18.02,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1190</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1190</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 18:01 min/km</li>
+                        </ul></div>","LINESTRING (2.3879106 41.8444888, 2.3877855 41.8445443, 2.3875776 41.8445584, 2.3872206 41.8445678, 2.3869056 41.8445819, 2.3867271 41.8446382, 2.3865927 41.8447086, 2.3863449 41.844865, 2.3862525 41.844901, 2.386076 41.8448854, 2.3860071 41.844889)"
+1191,19.46,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812]",Edge <b>1191</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1191</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 19:28 min/km</li>
+                        </ul></div>","LINESTRING (2.3882614 41.8444968, 2.3883041 41.8445769, 2.3883682 41.8446452, 2.3884313 41.8447137)"
+1208,15.94,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1208</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1208</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:56 min/km</li>
+                        </ul></div>","LINESTRING (2.3885889 41.845121, 2.3890525 41.8449212, 2.389177 41.8448649)"
+1209,18.08,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115537812]",Edge <b>1209</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1209</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 18:05 min/km</li>
+                        </ul></div>","LINESTRING (2.3885889 41.845121, 2.3885097 41.8449181, 2.3884313 41.8447137)"
+1252,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115577815],Edge <b>1252</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1252</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3762151 41.8055241, 2.3763471 41.8055253, 2.3766093 41.8055414, 2.3767256 41.8055774, 2.3768339 41.8056274, 2.3769438 41.8056799, 2.3771176 41.805748)"
+1253,15.98,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115577815],Edge <b>1253</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1253</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:59 min/km</li>
+                        </ul></div>","LINESTRING (2.3762151 41.8055241, 2.375851 41.8055055, 2.375578 41.8054566, 2.3752148 41.8053685, 2.3745694 41.8052325, 2.3738843 41.8050848, 2.3736839 41.8050547)"
+1257,14.48,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115555882, 115577815]",Edge <b>1257</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1257</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 14:29 min/km</li>
+                        </ul></div>","LINESTRING (2.3474016 41.8011097, 2.347408 41.8010795, 2.347438 41.8010348, 2.3474647 41.8010041, 2.3475059 41.8009749, 2.3475469 41.8009577, 2.3475991 41.8009434)"
+1314,12.34,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1314</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1314</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:20 min/km</li>
+                        </ul></div>","LINESTRING (2.3921582 41.8408894, 2.391315 41.8412139, 2.3907859 41.8413422, 2.3903261 41.8413504)"
+1315,13.27,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1315</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1315</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 13:16 min/km</li>
+                        </ul></div>","LINESTRING (2.3903261 41.8413504, 2.3899881 41.8413734, 2.3891723 41.8415791)"
+1316,12.23,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1316</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1316</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 12:14 min/km</li>
+                        </ul></div>","LINESTRING (2.3903261 41.8413504, 2.3902924 41.8418737)"
+1318,15.97,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1318</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1318</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 15:58 min/km</li>
+                        </ul></div>","LINESTRING (2.3891723 41.8415791, 2.3888358 41.841547, 2.3884135 41.8414798, 2.3875913 41.8411139, 2.3874813 41.8410926, 2.38735 41.8411072, 2.3872671 41.8412119, 2.3872545 41.8413219, 2.3872473 41.8414266, 2.3872256 41.8415045, 2.3871662 41.8415273)"
+1372,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115537812]",Edge <b>1372</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1372</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3901646 41.8476769, 2.3901898 41.8476312, 2.3902024 41.8475065, 2.3902121 41.8474395, 2.3902564 41.8472961)"
+1482,19.28,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115537812, 115537812]",Edge <b>1482</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1482</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 19:17 min/km</li>
+                        </ul></div>","LINESTRING (2.3980408 41.8419579, 2.3982346 41.8419491, 2.3983374 41.8419167, 2.3983888 41.841846, 2.3984125 41.8417311, 2.3984363 41.8416191, 2.3984916 41.8414306, 2.3985965 41.8411384)"
+1483,20.01,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115537812, 115537812]",Edge <b>1483</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1483</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 20:01 min/km</li>
+                        </ul></div>","LINESTRING (2.3985965 41.8411384, 2.3988723 41.8411938, 2.399098 41.8412448)"
+1484,16.88,From 15 to 30 min/km,#E53888,6,Less than 25 tracks,#FCEF91,"[115429237, 115429237, 115429237, 115537812, 115537812, 115537812]",Edge <b>1484</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1484</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 6</li>
+                            <li><b>Average pace</b>: 16:53 min/km</li>
+                        </ul></div>","LINESTRING (2.3985965 41.8411384, 2.3983534 41.8411596, 2.3980659 41.8413273, 2.3978998 41.8414215, 2.3977298 41.8415659, 2.3975202 41.8416395, 2.3972513 41.8416572, 2.3969666 41.8416307, 2.3966898 41.8415835, 2.3960413 41.8414097, 2.3955668 41.8413862, 2.3951081 41.8413803, 2.3947997 41.8413921, 2.3944985 41.841371, 2.3943562 41.8413823)"
+1485,19.67,From 15 to 30 min/km,#E53888,3,Less than 25 tracks,#FCEF91,"[115429237, 115537812, 115537812]",Edge <b>1485</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1485</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 3</li>
+                            <li><b>Average pace</b>: 19:40 min/km</li>
+                        </ul></div>","LINESTRING (2.399098 41.8412448, 2.3993115 41.8412035, 2.3996872 41.8410061, 2.399856 41.8409296)"
+1486,13.09,Less than 15 min/km,#AC1754,2,Less than 25 tracks,#FCEF91,"[115537812, 115537812]",Edge <b>1486</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1486</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 13:05 min/km</li>
+                        </ul></div>","LINESTRING (2.399098 41.8412448, 2.3992285 41.8412978, 2.3993234 41.8414657, 2.3993155 41.8417043, 2.3995499 41.8418504, 2.3997842 41.8418163, 2.4003716 41.8415763, 2.4009212 41.8420563, 2.4016034 41.8423387, 2.400997 41.8429457, 2.4009401 41.8437928, 2.401197 41.8442181)"
+1487,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1487</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1487</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.4012452 41.8404788, 2.4010989 41.8405318, 2.4007831 41.8405817)"
+1488,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115429237]",Edge <b>1488</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1488</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.4007831 41.8405817, 2.4007628 41.8405849, 2.4004622 41.8406909, 2.3999798 41.8408736, 2.399856 41.8409296)"
+1489,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115429237]",Edge <b>1489</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1489</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.4007831 41.8405817, 2.4008227 41.8405003, 2.4007482 41.8404556, 2.4007386 41.8403572, 2.400753 41.8402606, 2.4007771 41.8401569, 2.400729 41.840114, 2.400585 41.8401623, 2.400477 41.8401569, 2.4004074 41.8400836, 2.4002801 41.8400067, 2.4004434 41.8399137, 2.400537 41.8397455, 2.400657 41.8396329, 2.4008491 41.8395112, 2.4009427 41.8394147, 2.4011588 41.8393073, 2.4012932 41.8392215, 2.4013436 41.8391374, 2.4013076 41.8391142, 2.4012476 41.8390856, 2.4011972 41.8390518)"
+1490,23.68,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1490</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1490</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 23:41 min/km</li>
+                        </ul></div>","LINESTRING (2.4011972 41.8390518, 2.4011708 41.8390552, 2.4006354 41.8390498, 2.4002657 41.839037)"
+1494,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115429237, 115429237]",Edge <b>1494</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1494</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3944372 41.8376878, 2.3943709 41.8376448, 2.3941557 41.8374991, 2.3939405 41.8374466, 2.3935844 41.837432, 2.3932519 41.8374816, 2.3930328 41.8375516, 2.3927276 41.8378314, 2.3923954 41.837953)"
+1495,21.93,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1495</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1495</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 21:56 min/km</li>
+                        </ul></div>","LINESTRING (2.3944372 41.8376878, 2.3944968 41.8377226, 2.3946471 41.8377963, 2.3948369 41.8378434, 2.3950108 41.8378758, 2.3952323 41.8378964, 2.3954221 41.8378699, 2.3958492 41.8374339, 2.3959994 41.8373838, 2.3960627 41.8374398, 2.3960785 41.8376666, 2.3961062 41.8377727, 2.3961734 41.8378198, 2.396292 41.8378729, 2.3967942 41.8379554, 2.3971699 41.8380202, 2.3974309 41.8379995, 2.3975416 41.8379995, 2.3976484 41.838029, 2.3977433 41.8380703, 2.3977907 41.8381292, 2.3977986 41.8382234, 2.3977274 41.8383501, 2.3978065 41.8385151, 2.3979133 41.8387302, 2.3979291 41.838957, 2.398024 41.8391603, 2.3981703 41.8394402, 2.3981941 41.8397112, 2.3982336 41.8399056, 2.3983048 41.8399646, 2.398368 41.8399616, 2.3984748 41.8399204, 2.3986409 41.8397407, 2.3988505 41.8395285, 2.399586 41.8391603, 2.3997797 41.839069, 2.3997982 41.8390673)"
+1496,24.89,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1496</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1496</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 24:53 min/km</li>
+                        </ul></div>","LINESTRING (2.3939233 41.8355712, 2.3937629 41.8355104, 2.3936717 41.8354943, 2.3936045 41.8355068, 2.3935973 41.8355426, 2.3935829 41.8355855, 2.3935901 41.8356302)"
+1497,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1497</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1497</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3939233 41.8355712, 2.3940425 41.8356004, 2.3941492 41.8355757, 2.394208 41.8355127, 2.3942285 41.8354661, 2.3942816 41.835362, 2.3943184 41.8350441, 2.3942522 41.8348851, 2.3941786 41.8346906, 2.3941308 41.8343919, 2.3940886 41.8343001)"
+1498,21.2,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1498</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1498</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 21:12 min/km</li>
+                        </ul></div>","LINESTRING (2.3935901 41.8356302, 2.3935744 41.8357249, 2.3935609 41.8358002, 2.3935184 41.8358906)"
+1499,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1499</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1499</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3923954 41.837953, 2.3925482 41.8377193, 2.3926442 41.8376102, 2.3929731 41.8373115, 2.3932012 41.837104, 2.3932036 41.837011, 2.3931315 41.8369413, 2.3930979 41.836884, 2.3931579 41.8367928, 2.39329 41.8365299, 2.3933332 41.8363332, 2.3933482 41.8362368, 2.3933692 41.8361346, 2.3934532 41.8360774, 2.3935757 41.8359915, 2.3935589 41.83592, 2.3935184 41.8358906)"
+1500,17.2,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1500</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1500</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 17:12 min/km</li>
+                        </ul></div>","LINESTRING (2.3997982 41.8390673, 2.4001697 41.8390337, 2.4002657 41.839037)"
+1506,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>1506</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1506</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3940886 41.8343001, 2.3944066 41.8345229, 2.3947506 41.8346083, 2.3950788 41.834679, 2.3951764 41.8347031)"
+1563,11.97,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1563</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1563</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 11:58 min/km</li>
+                        </ul></div>","LINESTRING (2.3884313 41.8447137, 2.3883228 41.8447234, 2.3882022 41.844743, 2.3881043 41.844791, 2.3879838 41.8448852, 2.387905 41.844919, 2.3877785 41.8449359, 2.3876436 41.8449235, 2.387492 41.8449599, 2.3873673 41.8450157)"
+1730,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1730</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1730</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.4035575 41.8427038, 2.4032922 41.8422371, 2.403247 41.842126, 2.4031701 41.8419338, 2.4031439 41.841786, 2.4031248 41.8416451, 2.4031167 41.8415214, 2.4031507 41.8414099, 2.4032337 41.8412, 2.4033807 41.8408483, 2.4034215 41.840755, 2.4034569 41.8406364, 2.40348 41.840532, 2.4034809 41.8404856, 2.40348 41.8404559, 2.4034726 41.8403575, 2.403446 41.8402288, 2.4033521 41.8400474)"
+1732,15.98,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115537812, 115537812]",Edge <b>1732</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1732</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 15:59 min/km</li>
+                        </ul></div>","LINESTRING (2.4035575 41.8427038, 2.4029299 41.8430869, 2.4021719 41.8440751, 2.4012812 41.8443575, 2.401197 41.8442181)"
+1859,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115555882],Edge <b>1859</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1859</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3533108 41.8026827, 2.3531875 41.8026227, 2.3531338 41.8025745, 2.353107 41.8024786, 2.3530759 41.8023958, 2.35293 41.8022208, 2.3527944 41.8020133, 2.3527905 41.8019429, 2.3528227 41.8018573, 2.3530067 41.80154, 2.3530252 41.8014473, 2.3530008 41.8013731, 2.3529257 41.8013489, 2.3528162 41.8013477, 2.3526414 41.8013771, 2.3523921 41.8014702, 2.3518655 41.8017825, 2.3515642 41.8018691, 2.3512219 41.8019401, 2.3508595 41.8019091, 2.3506351 41.8018687, 2.3503693 41.8017903, 2.3501448 41.8016796, 2.3498529 41.8014531, 2.3496217 41.8013632, 2.3492659 41.8013522, 2.3489034 41.8013735, 2.3486623 41.8013992)"
+1968,14.17,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1968</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1968</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 14:10 min/km</li>
+                        </ul></div>","LINESTRING (2.3873085 41.840785, 2.3872491 41.8407675, 2.3871607 41.8407845, 2.3868928 41.8408684, 2.3867347 41.840916, 2.3866371 41.8410008, 2.3865867 41.8411722, 2.3865062 41.8414759, 2.3864477 41.8416218)"
+1969,13.14,Less than 15 min/km,#AC1754,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>1969</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 1969</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 13:08 min/km</li>
+                        </ul></div>","LINESTRING (2.3873085 41.840785, 2.3873337 41.8408212, 2.3872761 41.8408978, 2.3871698 41.8409796, 2.3870977 41.8410763, 2.3870545 41.8412602, 2.3870509 41.8414199, 2.3871013 41.8414871, 2.3871662 41.8415273)"
+2243,16.74,From 15 to 30 min/km,#E53888,2,Less than 25 tracks,#FCEF91,"[115555882, 115577815]",Edge <b>2243</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 2243</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 2</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3485181 41.8015012, 2.3486569 41.8014452, 2.3486623 41.8013992)"
+2858,17.31,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115537812],Edge <b>2858</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 2858</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 17:19 min/km</li>
+                        </ul></div>","LINESTRING (2.3850811 41.8381293, 2.3850933 41.838348, 2.3853502 41.8384483, 2.3856927 41.8386305, 2.3860719 41.838667, 2.3859741 41.8390407, 2.3857294 41.8394326, 2.3855949 41.8396878, 2.3856927 41.8397971, 2.3859374 41.8398792, 2.3858028 41.8400614, 2.3857417 41.8402437, 2.3861698 41.8404533, 2.3862554 41.8410548, 2.3864477 41.8416218)"
+2890,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>2890</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 2890</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.3926421 41.8459917, 2.3926095 41.8459246, 2.3925791 41.8457415, 2.3926973 41.8456026, 2.3926913 41.8455504, 2.3926665 41.8455058, 2.3926204 41.8454523, 2.3924674 41.8453415, 2.3924101 41.8453263, 2.3922981 41.8453237, 2.3920904 41.8452976, 2.3912701 41.8451872)"
+2891,16.74,From 15 to 30 min/km,#E53888,1,Less than 25 tracks,#FCEF91,[115429237],Edge <b>2891</b>,"<div style=""font-size: 10px;"">
+                        <b>Edge 2891</b><br>
+                        <ul style=""padding-left: 16px; margin: 4px 0;"">
+                            <li><b>Total registered tracks</b>: 1</li>
+                            <li><b>Average pace</b>: 16:44 min/km</li>
+                        </ul></div>","LINESTRING (2.389177 41.8448649, 2.3893491 41.8449245, 2.389903 41.8451008, 2.3903628 41.8451913, 2.3907706 41.8451632, 2.3911108 41.8451741, 2.3912701 41.8451872)"
