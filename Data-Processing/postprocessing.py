@@ -624,6 +624,13 @@ def postprocessing_part1(input_path, osm_path, output_path, dataframes_path, fmm
 
                 # Insert the geometry
                 track_information.append(LineString(zip(all_track_df['lat'], all_track_df['lon'])))
+
+                # Apply a transformation into the difficulty dataframe - only 4 groups
+                track_information['difficulty'] = track_information['difficulty'].replace({'Fàcil': 'Easy',
+                                                                                           'Moderat': 'Moderate',
+                                                                                           'Difícil': 'Difficult',
+                                                                                           'Molt difícil': 'Very difficult',
+                                                                                           'Només experts': 'Very difficult'})
                 
                 # # Add the track information into the dataframe
                 track_info_df.loc[len(track_info_df)] = track_information

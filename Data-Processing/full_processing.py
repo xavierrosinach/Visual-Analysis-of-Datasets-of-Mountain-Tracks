@@ -8,7 +8,7 @@ from waypoints_postprocessing import obtain_waypoints_df
 def main():
 
     # Define the data path
-    data_path = '../../Data'
+    data_path = '../../Data/Processing-Data'
 
     # Canigo
     main_preprocessing(data_path, 'canigo')

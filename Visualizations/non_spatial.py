@@ -46,7 +46,7 @@ def time_distribution(df):
         y=alt.Y('sum(count):Q', title='Total Registered Tracks'),
         tooltip=[(alt.Tooltip('month:N', title='Month')), (alt.Tooltip('sum(count):Q', title='Total Registered Tracks'))]
     ).transform_filter(year_click)
-                    
+
     # All dates line chart
     all_dates_line = alt.Chart(df).mark_area(line=True, opacity=0.2, color='#2CD3E1').encode(
         x=alt.X('date:T', title='Date'),
@@ -312,7 +312,8 @@ def generate_min_max_lines(df, bar_selection):
         color=alt.condition(bar_selection, alt.Color('difficulty:N', title='Difficulty', scale=alt.Scale(domain=diff_values, range=diff_colors)), alt.value("#818181")),
         tooltip=[(alt.Tooltip('difficulty:N', title='Difficulty')),  (alt.Tooltip('min(total_distance):Q', title='Min distance')), (alt.Tooltip('max(total_distance):Q', title='Max distance')), (alt.Tooltip('mean(total_distance):Q', title='Average distance', format='.2f'))],
         opacity=alt.condition(bar_selection, alt.value(1), alt.value(0.4))
-    ).add_params(bar_selection)
+    ).add_params(bar_selection
+    ).properties(width=300, height=75, title='Distance range plot')
 
     # Time lines
     time_line = alt.Chart(df).mark_line().encode(
@@ -330,7 +331,8 @@ def generate_min_max_lines(df, bar_selection):
         color=alt.condition(bar_selection, alt.Color('difficulty:N', title='Difficulty', scale=alt.Scale(domain=diff_values, range=diff_colors)), alt.value("#818181")),
         tooltip=[(alt.Tooltip('difficulty:N', title='Difficulty')),  (alt.Tooltip('min(total_time):Q', title='Min time')), (alt.Tooltip('max(total_time):Q', title='Max time')), (alt.Tooltip('mean(total_time):Q', title='Average time', format='.2f'))],
         opacity=alt.condition(bar_selection, alt.value(1), alt.value(0.4))
-    ).add_params(bar_selection)
+    ).add_params(bar_selection
+    ).properties(width=300, height=75, title='Time range plot')
 
     # Pace lines
     pace_line = alt.Chart(df).mark_line().encode(
@@ -348,7 +350,8 @@ def generate_min_max_lines(df, bar_selection):
         color=alt.condition(bar_selection, alt.Color('difficulty:N', title='Difficulty', scale=alt.Scale(domain=diff_values, range=diff_colors)), alt.value("#818181")),
         tooltip=[(alt.Tooltip('difficulty:N', title='Difficulty')),  (alt.Tooltip('min(average_pace):Q', title='Min pace')), (alt.Tooltip('max(average_pace):Q', title='Max pace')), (alt.Tooltip('mean(average_pace):Q', title='Average pace', format='.2f'))],
         opacity=alt.condition(bar_selection, alt.value(1), alt.value(0.4))
-    ).add_params(bar_selection)
+    ).add_params(bar_selection
+    ).properties(width=300, height=75, title='Average pace range plot')
 
     # Elevation lines
     elev_line = alt.Chart(df).mark_line().encode(
@@ -366,7 +369,8 @@ def generate_min_max_lines(df, bar_selection):
         color=alt.condition(bar_selection, alt.Color('difficulty:N', title='Difficulty', scale=alt.Scale(domain=diff_values, range=diff_colors)), alt.value("#818181")),
         tooltip=[(alt.Tooltip('difficulty:N', title='Difficulty')),  (alt.Tooltip('min(elevation_gain):Q', title='Min elevation')), (alt.Tooltip('max(elevation_gain):Q', title='Max elevation')), (alt.Tooltip('mean(elevation_gain):Q', title='Average elevation', format='.2f'))],
         opacity=alt.condition(bar_selection, alt.value(1), alt.value(0.4))
-    ).add_params(bar_selection)
+    ).add_params(bar_selection
+    ).properties(width=300, height=75, title='Elevation gain range plot')
 
     # Return all the paths in vertical disposition
     return alt.vconcat(dist_min_max, time_min_max, pace_min_max, elev_min_max)

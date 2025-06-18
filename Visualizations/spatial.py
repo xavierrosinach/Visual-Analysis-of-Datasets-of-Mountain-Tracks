@@ -213,18 +213,7 @@ def create_points_tooltips_popups(track_df, max_elev_idx, min_elev_idx):
     return tooltip_start_point, popup_start_point, tooltip_end_point, popup_end_point, tooltip_highest_point, popup_highest_point, tooltip_lowest_point, popup_lowest_point
 
 # Create the single track map
-def create_track_map(data_path, track_id, zone):
-
-    # General dataframes 
-    tracks_info = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/tracks_info.csv')
-    all_edges_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/Edges-Dataframes/all_edges.csv')
-    waypoints_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/waypoints.csv')
-
-    # Read the dataframes
-    track_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/All-Tracks/{track_id}.csv')
-    track_km_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Km/{track_id}.csv')
-    track_pace_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Pace/{track_id}.csv')
-    track_edges_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Edges/{track_id}.csv')
+def create_track_map(track_id, tracks_info, all_edges_df, waypoints_df, track_df, track_km_df, track_pace_df, track_edges_df):
 
     # Read the information and waypoints
     track_info = tracks_info[tracks_info['track_id'] == track_id]
@@ -378,10 +367,10 @@ def create_track_map(data_path, track_id, zone):
             folium.Marker(location=[row['lat'], row['lon']], tooltip=row['map_tooltip'], popup=folium.Popup(row['map_popup'], max_width=300), icon=folium.Icon(color='orange', icon=row['icon'], prefix='fa')).add_to(points_interest)
 
     # Create and add the legends
-    pace_legend = create_html_legend(pace_color_dict, 'Average Pace', 30)
-    uphill_legend = create_html_legend(uphill_color_dict, 'Uphill %', 260)
-    popularity_legend = create_html_legend(tracks_color_dict, 'Popularity', 490)
-    comparison_legend = create_html_legend(comparison_color_dict, 'Comparison with all tracks', 720)
+    pace_legend = create_html_legend(pace_color_dict, 'Average pace - legend', 30)
+    uphill_legend = create_html_legend(uphill_color_dict, 'Uphill % - legend', 260)
+    popularity_legend = create_html_legend(tracks_color_dict, 'Popularity - legend', 490)
+    comparison_legend = create_html_legend(comparison_color_dict, 'Comparison with all tracks - legend', 720)
     m.add_child(pace_legend)
     m.add_child(uphill_legend)
     m.add_child(popularity_legend)
@@ -395,13 +384,7 @@ def create_track_map(data_path, track_id, zone):
     return m
 
 # Given an edges dataframe, create the full map
-def create_edges_map(edges_df, data_path, zone):
-
-    # Define the waypoints dataframe
-    waypoints_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/waypoints.csv')
-
-    # Read the tracks info dataframe
-    tracks_info = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/tracks_info.csv')
+def create_edges_map(edges_df, zone, tracks_info, waypoints_df):
 
     # Obtain the center coords 
     center_coords = center_coords_dict[zone]
@@ -439,8 +422,8 @@ def create_edges_map(edges_df, data_path, zone):
         m.add_child(point)
 
     # Add the pace legend to legends
-    popularity_legend = create_html_legend(tracks_color_dict, 'Popularity', 30)
-    pace_legend = create_html_legend(pace_color_dict, 'Average Pace', 260)
+    popularity_legend = create_html_legend(tracks_color_dict, 'Popularity - legend', 30)
+    pace_legend = create_html_legend(pace_color_dict, 'Average pace - legend', 260)
     m.add_child(pace_legend)
     m.add_child(popularity_legend)
 
@@ -499,7 +482,8 @@ def create_edges_map(edges_df, data_path, zone):
 
     # Add the waypoints
     for index, row in waypoints_df.iterrows():
-        folium.Marker(location=[row['lat'], row['lon']], tooltip=row['map_tooltip'], popup=folium.Popup(row['map_popup'], max_width=300), icon=folium.Icon(color='orange', icon=row['icon'], prefix='fa')).add_to(waypoints)
+        folium.CircleMarker(location=[row['lat'], row['lon']], tooltip=row['map_tooltip'], popup=folium.Popup(row['map_popup'], max_width=300), radius=5, fill=True, fillOpacity=0.75, color='orange').add_to(waypoints)  
+
 
     # Add the layer control
     folium.LayerControl(position='topright', collapsed=False).add_to(m)

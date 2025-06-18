@@ -7,7 +7,7 @@ from shapely.wkt import loads
 from shapely.geometry import LineString
 from fmm import Network,NetworkGraph,UBODTGenAlgorithm,UBODT,FastMapMatch, FastMapMatchConfig
 
-data_path = '../../Data-2'
+# Define the bounds for each zone
 bounds_dict = {"canigo": (2.2, 2.7, 42.4, 42.6), "matagalls": (2.3, 2.5, 41.8, 41.9), "vallferrera": (1.2, 1.7, 42.5, 42.8), "exemple": (2.3, 2.5, 41.8, 41.9)}
 
 # Create needed datclearaframes
