@@ -31,12 +31,14 @@ def create_all_edges_maps(zone, data_path, tracks_info_df, waypoints_df, all_edg
     if not os.path.exists(all_edges_path):      # Check if it exists
         all_edges_map = create_edges_map(all_edges_df, zone, tracks_info_df, waypoints_df)      # Create the map
         all_edges_map.save(all_edges_path)  
+    print('     All edges done')
 
     # Difficulties
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'difficulty_easy.csv', 'difficulty', 'Easy', 'easy_edges.html', visualizations_path)
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'difficulty_moderate.csv', 'difficulty', 'Moderate', 'moderate_edges.html', visualizations_path)
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'difficulty_difficult.csv', 'difficulty', 'Difficult', 'difficult_edges.html', visualizations_path)
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'difficulty_very_difficult.csv', 'difficulty', 'Very difficult', 'very_difficult_edges.html', visualizations_path)
+    print('     All difficulties done')
 
     # Weather conditions
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'weather_clear.csv', 'weather_condition', 'Clear', 'clear_edges.html', visualizations_path)
@@ -44,10 +46,12 @@ def create_all_edges_maps(zone, data_path, tracks_info_df, waypoints_df, all_edg
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'weather_drizzle.csv', 'weather_condition', 'Drizzle', 'drizzle_edges.html', visualizations_path)
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'weather_rain.csv', 'weather_condition', 'Rain', 'rain_edges.html', visualizations_path)
     create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, 'weather_snow.csv', 'weather_condition', 'Snow', 'snow_edges.html', visualizations_path)
+    print('     All weather conditions done')
 
     # Years
     for year in tracks_info_df['year'].unique().tolist():
         create_and_save_edges_map(zone, data_path, tracks_info_df, waypoints_df, f'year_{year}.csv', 'year', year, f'{year}_edges.html', visualizations_path)
+    print('     All years done')
 
 # Function to create all the non-spatial visualizations
 def create_non_spatial_visualizations(zone, tracks_info_df, weather_df, visualizations_path):
@@ -129,30 +133,6 @@ def create_non_spatial_visualizations(zone, tracks_info_df, weather_df, visualiz
         weather_chart = alt.vconcat(alt.hconcat(pie_chart, scatter_plot), calendar)
         weather_chart.save(weather_path)
 
-# Function to create a single track visualizations
-def create_single_track_vis(zone, data_path, track_id, tracks_info_df, all_edges_df, waypoints_df, visualizations_path):
-
-    # Create paths to save the html
-    map_html_path = os.path.join(visualizations_path, f'{track_id}_map.html')
-    chart_html_path = os.path.join(visualizations_path, f'{track_id}_chart.html')
-
-    # Read all the track's dataframes
-    track_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/All-Tracks/{track_id}.csv')
-    track_km_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Km/{track_id}.csv')
-    track_pace_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Pace/{track_id}.csv')
-    track_edges_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Tracks-Output/Partial-Edges/{track_id}.csv')
-
-    # Create the track map - if the path does not exist
-    if not os.path.exists(map_html_path):
-        track_map = create_track_map(track_id, tracks_info_df, all_edges_df, waypoints_df, track_df, track_km_df, track_pace_df, track_edges_df)
-        track_map.save(map_html_path)
-
-    # Create the elevation profile - if the path does not exist
-    if not os.path.exists(chart_html_path):
-        track_chart = elevation_profile_and_pace_bars(track_df, track_km_df)
-        track_chart = track_chart.properties(width=900)
-        track_chart.save(chart_html_path)
-
 # Main function
 def main_save_visualizations(zone):
     
@@ -166,7 +146,7 @@ def main_save_visualizations(zone):
     all_edges_df = pd.read_csv(f'{data_path}/{zone}/Output-Data/Data-Frames/Edges-Dataframes/all_edges.csv')
 
     # Create a visualizations directory if not created - inside the streamlit directory
-    visualizations_path = f'../Streamlit/Data/Visualizations/{zone}'
+    visualizations_path = f'../../Data/Streamlit-Data/Visualizations/{zone}'
     os.makedirs(visualizations_path, exist_ok=True)
 
     # Create the non spatial visualizations path
@@ -186,10 +166,6 @@ def main_save_visualizations(zone):
 
     # Create all non-spatial visualizations
     create_non_spatial_visualizations(zone, tracks_info_df, weather_df, non_spatial_vis_path)
-
-    # Create all the single tracks visualizations
-    for track_id in tracks_info_df['track_id'].unique().tolist():
-        create_single_track_vis(zone, data_path, track_id, tracks_info_df, all_edges_df, waypoints_df, single_tracks_vis_path)
 
 # Call the main function for the three zones
 print('El Canigó')

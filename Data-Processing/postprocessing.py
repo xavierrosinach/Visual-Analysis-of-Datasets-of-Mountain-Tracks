@@ -9,7 +9,6 @@ from datetime import datetime
 import requests
 import numpy as np
 import warnings
-from sklearn.cluster import KMeans
 import ast
 
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -17,8 +16,8 @@ warnings.filterwarnings("ignore", message="Could not find the number of physical
 warnings.filterwarnings("ignore", category=SettingWithCopyWarning)
 
 # Dictionaries with the colors of the groups
-pace_color_dict = {'Less than 15 min/km':'#AC1754', 'From 15 to 30 min/km':'#E53888', 'From 30 to 45 min/km':'#F37199', 'More than 45 min/km':'#F7A8C4'}
-uphill_color_dict = {'Less than 7.5%':'#77E4C8', 'From 7.5% to 15%':'#36C2CE', 'From 15% to 22.5%':'#478CCF', 'More than 22.5%':'#4535C1'}
+pace_color_dict = {'Less than 15 min/km':'#ae017e', 'From 15 to 30 min/km':'#f768a1', 'From 30 to 45 min/km':'#fbb4b9', 'More than 45 min/km':'#feebe2'}
+uphill_color_dict = {'Less than 7.5%':'#f1eef6', 'From 7.5% to 15%':'#bdc9e1', 'From 15% to 22.5%':'#74a9cf', 'More than 22.5%':'#0570b0'}
 
 # Dictionary with the center coordinates
 center_coords_dict = {"canigo": (2.5, 42.5), "matagalls": (2.4, 41.825), "vallferrera": (1.35, 42.6), "exemple": (2.4, 41.825)}
@@ -666,15 +665,10 @@ def postprocessing_part2(zone, dataframes_path):
     tracks_info_df[['first_lat', 'first_lon']] = pd.DataFrame(tracks_info_df['first_coordinate'].tolist(), index=tracks_info_df.index)          # Split into separate lat and lon columns
     tracks_info_df[['last_lat', 'last_lon']] = pd.DataFrame(tracks_info_df['last_coordinate'].tolist(), index=tracks_info_df.index)
 
-    # Apply KMeans for the starting zone
-    kmeans = KMeans(n_clusters=10, random_state=42)
-    tracks_info_df['start_zone'] = kmeans.fit_predict(tracks_info_df[['first_lat', 'first_lon']])
-    tracks_info_df['finish_zone'] = kmeans.fit_predict(tracks_info_df[['last_lat', 'last_lon']])
-
     # Reorder the dataframe
     tracks_info_df = tracks_info_df[['track_id','user','title','url','difficulty','date','month','year','season','weekday','total_time',
                                      'total_distance','average_speed','average_pace','elevation_gain','min_temp','max_temp','weather_condition',
-                                     'first_coordinate','last_coordinate','start_zone','finish_zone','geometry']]
+                                     'first_coordinate','last_coordinate','geometry']]
 
     # Save the tracks info dataframe to the desired path
     tracks_info_df.to_csv(tracks_info_path, index=False)

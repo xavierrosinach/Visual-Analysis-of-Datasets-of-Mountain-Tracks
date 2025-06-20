@@ -1,4 +1,3 @@
-import geopandas as gpd
 import pandas as pd
 from pandas.errors import SettingWithCopyWarning
 import os
@@ -9,8 +8,8 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=SettingWithCopyWarning)
 
 # Dictionaries with the colors of the groups
-pace_color_dict = {'Less than 15 min/km':'#AC1754', 'From 15 to 30 min/km':'#E53888', 'From 30 to 45 min/km':'#F37199', 'More than 45 min/km':'#F7A8C4'}
-tracks_color_dict = {'Less than 25 tracks':'#FCEF91', 'From 25 to 50 tracks':'#FB9E3A', 'From 50 to 75 tracks':'#E6521F', 'More than 75 tracks':'#EA2F14'}
+pace_color_dict = {'Less than 15 min/km':'#ae017e', 'From 15 to 30 min/km':'#f768a1', 'From 30 to 45 min/km':'#fbb4b9', 'More than 45 min/km':'#feebe2'}
+tracks_color_dict = {'Less than 25 tracks':'#ffffb2', 'From 25 to 50 tracks':'#fecc5c', 'From 50 to 75 tracks':'#fd8d3c', 'More than 75 tracks':'#e31a1c'}
 
 # Formats the pace
 def format_pace(pace_min_per_km):

@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import json
-import geopandas as gpd
 from geopy.distance import geodesic
 from shapely.wkt import loads
 from shapely.geometry import LineString

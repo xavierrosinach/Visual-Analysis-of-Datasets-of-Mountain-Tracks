@@ -4,6 +4,9 @@ import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+# Color palette - source Observable10
+color_palette = {1:'#4269D0', 2:'#EFB118', 3:'#FF7250', 4:'#FF8A87', 5:'#97BBF5', 6:'#818181'}
+
 # Function to create the time distribution visualizations
 def time_distribution(df):
 
@@ -32,23 +35,23 @@ def time_distribution(df):
     year_click = alt.selection_point(fields=['year'], on='click')
 
     # Year bar chart
-    year_bar_chart = alt.Chart(df).mark_bar(color='#FFB84C').encode(
+    year_bar_chart = alt.Chart(df).mark_bar(color=color_palette[2]).encode(
         x=alt.X('year:N', axis=alt.Axis(labelAngle=0), title='Year'),
         y=alt.Y('sum(count):Q', title='Total Registered Tracks'),
         opacity=alt.condition(year_click, alt.value(1), alt.value(0.2)),
-        color=alt.condition(year_click, alt.value('#FFB84C'), alt.value("#818181")),
+        color=alt.condition(year_click, alt.value(color_palette[2]), alt.value(color_palette[6])),
         tooltip=[(alt.Tooltip('year:N', title='Year')), (alt.Tooltip('sum(count):Q', title='Total Registered Tracks'))]
     ).add_params(year_click)
 
     # Month bar chart with the selected year filter
-    month_bar_chart = alt.Chart(df).mark_bar(color='#F266AB').encode(
+    month_bar_chart = alt.Chart(df).mark_bar(color=color_palette[3]).encode(
         x=alt.X('month:N', axis=alt.Axis(labelAngle=0), sort=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], title='Month'),
         y=alt.Y('sum(count):Q', title='Total Registered Tracks'),
         tooltip=[(alt.Tooltip('month:N', title='Month')), (alt.Tooltip('sum(count):Q', title='Total Registered Tracks'))]
     ).transform_filter(year_click)
 
     # All dates line chart
-    all_dates_line = alt.Chart(df).mark_area(line=True, opacity=0.2, color='#2CD3E1').encode(
+    all_dates_line = alt.Chart(df).mark_area(line=True, opacity=0.2, color=color_palette[1]).encode(
         x=alt.X('date:T', title='Date'),
         y=alt.Y('cumul_count:Q', title='Cumulative Sum of Registered Tracks')
     ).add_params(year_click
@@ -93,7 +96,7 @@ def two_years_month_comparison(df):
         x=alt.X('month:N', sort=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], axis=alt.Axis(labelAngle=0), title='Month'),
         y=alt.Y('count():Q', title='Total Registered Tracks'),
         xOffset=alt.XOffset('year:N', title=None),
-        color=alt.condition(hover, alt.Color('year:N', title='Year', scale=alt.Scale(range=["#F266AB", "#A459D1"])), alt.value("#818181")),
+        color=alt.condition(hover, alt.Color('year:N', title='Year', scale=alt.Scale(range=[color_palette[4], color_palette[5]])), alt.value(color_palette[6])),
         opacity=alt.condition(hover, alt.value(1), alt.value(0.2)),
         tooltip=[(alt.Tooltip('year:N',title='Year')), (alt.Tooltip('month:N',title='Month')), (alt.Tooltip('count():Q',title='Total Registered Tracks'))]
     ).add_params(year_2, year_1, hover
@@ -124,7 +127,7 @@ def two_years_weekday_comparison(df):
         x=alt.X('weekday:N', sort=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], axis=alt.Axis(labelAngle=0), title='Day of the Week'),
         y=alt.Y('count():Q', title='Total Registered Tracks'),
         xOffset=alt.XOffset('year:N', title=None),
-        color=alt.condition(hover, alt.Color('year:N', title='Year', scale=alt.Scale(range=["#F266AB", "#A459D1"])), alt.value("#818181")),
+        color=alt.condition(hover, alt.Color('year:N', title='Year', scale=alt.Scale(range=[color_palette[4], color_palette[5]])), alt.value(color_palette[6])),
         opacity=alt.condition(hover, alt.value(1), alt.value(0.2)),
         tooltip=[(alt.Tooltip('year:N',title='Year')), (alt.Tooltip('weekday:N',title='Day of the Week')), (alt.Tooltip('count():Q',title='Total Registered Tracks'))]
     ).add_params(year_2, year_1, hover
@@ -510,14 +513,14 @@ def elevation_profile_and_pace_bars(full_track_df, track_km_df):
     full_track_df['km'] = full_track_df['elap_dist'].astype(int)
 
     # Dictionaries with the colors of the groups
-    pace_color_dict = {'Less than 15 min/km':'#AC1754', 'From 15 to 30 min/km':'#E53888', 'From 30 to 45 min/km':'#F37199', 'More than 45 min/km':'#F7A8C4'}
+    pace_color_dict = {'Less than 15 min/km':'#ae017e', 'From 15 to 30 min/km':'#f768a1', 'From 30 to 45 min/km':'#fbb4b9', 'More than 45 min/km':'#feebe2'}
 
     # Merge it with the km df to obtain the average pace
     track_km_df_part = track_km_df[['km', 'avg_pace', 'elev_gain', 'uphill_perc']]
     full_track_df = full_track_df.merge(track_km_df_part, on='km')
 
     # Create the elevation profile
-    elevation_profile = alt.Chart(full_track_df).mark_line(color='#4CCD99').encode(
+    elevation_profile = alt.Chart(full_track_df).mark_line(color='#a463f2').encode(
         x=alt.X('elap_dist:Q', title='Distance'),
         y=alt.Y('elev:Q', title='Elevation'))
     

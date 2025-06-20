@@ -12,10 +12,10 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=SettingWithCopyWarning)
 
 # Dictionaries with the colors of the groups
-pace_color_dict = {'Less than 15 min/km':'#AC1754', 'From 15 to 30 min/km':'#E53888', 'From 30 to 45 min/km':'#F37199', 'More than 45 min/km':'#F7A8C4'}
-uphill_color_dict = {'Less than 7.5%':'#77E4C8', 'From 7.5% to 15%':'#36C2CE', 'From 15% to 22.5%':'#478CCF', 'More than 22.5%':'#4535C1'}
-tracks_color_dict = {'Less than 25 tracks':'#FCEF91', 'From 25 to 50 tracks':'#FB9E3A', 'From 50 to 75 tracks':'#E6521F', 'More than 75 tracks':'#EA2F14'}
-comparison_color_dict = {'Fastest':'#16C47F', 'Slowest':'#F93827'}
+pace_color_dict = {'Less than 15 min/km':'#ae017e', 'From 15 to 30 min/km':'#f768a1', 'From 30 to 45 min/km':'#fbb4b9', 'More than 45 min/km':'#feebe2'}
+uphill_color_dict = {'Less than 7.5%':'#f1eef6', 'From 7.5% to 15%':'#bdc9e1', 'From 15% to 22.5%':'#74a9cf', 'More than 22.5%':'#0570b0'}
+tracks_color_dict = {'Less than 25 tracks':'#ffffb2', 'From 25 to 50 tracks':'#fecc5c', 'From 50 to 75 tracks':'#fd8d3c', 'More than 75 tracks':'#e31a1c'}
+comparison_color_dict = {'Fastest':'#3ca951', 'Slowest':'#ff725c'}
 
 # Dictionary with the center coordinates
 center_coords_dict = {"canigo": (2.5, 42.5), "matagalls": (2.4, 41.825), "vallferrera": (1.35, 42.6), "exemple": (2.4, 41.825)}
@@ -274,7 +274,7 @@ def create_track_map(track_id, tracks_info, all_edges_df, waypoints_df, track_df
 
     # Add the full track polyline to the map, create the tooltip and the popup
     full_tooltip, full_popup = create_track_tooltip_popup(track_info)
-    folium.PolyLine(locations=full_track_coords, tooltip=full_tooltip, popup=folium.Popup(full_popup, max_width=300), color='#F97A00', weight=4).add_to(full_track)
+    folium.PolyLine(locations=full_track_coords, tooltip=full_tooltip, popup=folium.Popup(full_popup, max_width=300), color='#efb118', weight=4).add_to(full_track)
 
     # Add the kilometer division three layers - and the km points
     for index, row in track_km_df.iterrows():

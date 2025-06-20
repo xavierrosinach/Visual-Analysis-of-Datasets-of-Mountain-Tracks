@@ -25,14 +25,12 @@ def main():
     main_edges_postprocessing(data_path, 'matagalls')
     obtain_waypoints_df(data_path, 'matagalls')
 
-
-    # Vall Ferrera
+    # # Vall Ferrera
     main_preprocessing(data_path, 'vallferrera')
     main_fmm(data_path, 'vallferrera')
     main_postprocessing(data_path, 'vallferrera')
     main_edges_postprocessing(data_path, 'vallferrera')
     obtain_waypoints_df(data_path, 'vallferrera')
-
 
     # Example - Matagalls subset
     main_preprocessing(data_path, 'exemple')

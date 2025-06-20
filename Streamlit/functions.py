@@ -1,10 +1,86 @@
 import pandas as pd
 import streamlit as st
 import altair as alt
+import sys
+import os
 from streamlit.components.v1 import html
 
 # Define the data path
 streamlit_data_path = '../../Data/Streamlit-Data'
+processing_data_path = '../../Data/Processing-Data'
+
+# Go to the 'Visualizations' folder to obtain the functions
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Visualizations')))
+
+# Import the functions
+from non_spatial import *
+from spatial import *
+
+# Given the zone, creates all the visualizations
+def create_visualizations(zone):
+
+    # Obtain the dataframes
+    tracks_info = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Data-Frames', 'tracks_info.csv'))
+    weather_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Data-Frames', 'weather.csv'))
+
+    # Time distribution vis
+    year_bar_chart, month_bar_chart, all_dates_line = time_distribution(tracks_info)    # Generate the visualizations
+    year_bar_chart = year_bar_chart.properties(width=400, height=200, title='Registered Tracks per Year')                   # Sizes and titles
+    month_bar_chart = month_bar_chart.properties(width=400, height=200, title='Registered Tracks per Month')
+    all_dates_line = all_dates_line.properties(width=900, height=200, title='Evolution of Registered Tracks Through the Years')
+    time_dist_vis = alt.vconcat(alt.hconcat(year_bar_chart, month_bar_chart), all_dates_line).resolve_scale(x='shared').configure_view(strokeOpacity=0)
+
+    # Two years comparisons
+    month_comp_vis = two_years_month_comparison(tracks_info)
+    weekday_comp_vis = two_years_weekday_comparison(tracks_info)
+
+    # Difficulty information
+    difficulty_bars, min_max_lines, scatter_grid = difficulty_info(tracks_info)
+    difficulty_bars = difficulty_bars.properties(width=300, height=300, title='Total registered tracks per difficulty')
+    diff_info_vis = alt.hconcat(alt.vconcat(difficulty_bars, min_max_lines), scatter_grid).resolve_scale(x='shared').configure_view(strokeOpacity=0)
+
+    # Weather information - read HTML as does not work well
+    weather_vis_path = os.path.join(streamlit_data_path, 'Visualizations', zone, 'Non-Spatial-Visualizations', 'weather_calendar.html')
+    with open(weather_vis_path, "r", encoding="utf-8") as f:
+        weather_vis = f.read()
+
+    # Full map visualization - in HTML
+    full_map_path = os.path.join(streamlit_data_path, 'Visualizations', zone, 'Edges-Maps-Visualizations', 'all_edges_map.html')
+    with open(full_map_path, "r", encoding="utf-8") as f:
+        all_edges_map = f.read()
+    
+    # All difficulties
+    difficulties = ['easy', 'moderate', 'difficult', 'very_difficult']
+    diff_edges_maps = []
+    for diff in difficulties:
+        map_path = os.path.join(streamlit_data_path, 'Visualizations', zone, 'Edges-Maps-Visualizations', f'{diff}_edges.html')
+        with open(map_path, "r", encoding="utf-8") as f:
+            map = f.read()
+            diff_edges_maps.append(map)
+
+    # All weather conditions
+    weather_cond = ['clear','cloudy','drizzle','rain','snow']
+    weather_edges_maps = []
+    for weath in weather_cond:
+        map_path = os.path.join(streamlit_data_path, 'Visualizations', zone, 'Edges-Maps-Visualizations', f'{weath}_edges.html')
+        with open(map_path, "r", encoding="utf-8") as f:
+            map = f.read()
+            weather_edges_maps.append(map)
+
+    # All years
+    years = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+    years_edges_maps = []
+    for year in years:
+        map_path = os.path.join(streamlit_data_path, 'Visualizations', zone, 'Edges-Maps-Visualizations', f'{year}_edges.html')
+        if os.path.exists(map_path):
+            with open(map_path, "r", encoding="utf-8") as f:
+                map = f.read()
+                years_edges_maps.append(map)
+        else:
+            years_edges_maps.append(None)
+
+    # Return all the data
+    return time_dist_vis, month_comp_vis, weekday_comp_vis, diff_info_vis, weather_vis, all_edges_map, diff_edges_maps, weather_edges_maps, years_edges_maps
 
 # Function to obtain the values to highlight
 def obtain_values_highlight(df):
@@ -84,7 +160,7 @@ def zone_home_page(zone, df):
     st.markdown('---')
 
 # Question 1 function
-def question_1(zone, df):
+def question_1(zone, all_edges_map):
 
     # Header
     st.header('Full Network of Paths Map')
@@ -100,9 +176,7 @@ def question_1(zone, df):
     chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/all_edges_map.html'
 
     # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=800, scrolling=False)
+    html(all_edges_map, height=800, scrolling=False)
 
     st.markdown('---')
 
@@ -114,7 +188,7 @@ def question_1(zone, df):
     st.markdown('---')
 
 # Question 2 function
-def question_2(zone, df):
+def question_2(zone, diff_edges_maps):
     
     # Header
     st.header('Network of Paths Maps depending on the Difficulty')
@@ -127,35 +201,25 @@ def question_2(zone, df):
     
     st.markdown('---')
 
-    # Get all the paths
-    easy_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/easy_edges.html'
-    moderate_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/moderate_edges.html'
-    difficult_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/difficult_edges.html'
-    very_difficult_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/very_difficult_edges.html'
-
     # First row
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("#### Easy")
-        with open(easy_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(diff_edges_maps[0], height=400, scrolling=False)
 
     with col2:
         st.markdown("#### Moderate")
-        with open(moderate_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(diff_edges_maps[1], height=400, scrolling=False)
 
     # Second row
     col3, col4 = st.columns(2)
     with col3:
         st.markdown("#### Difficult")
-        with open(difficult_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(diff_edges_maps[2], height=400, scrolling=False)
 
     with col4:
         st.markdown("#### Very difficult")
-        with open(very_difficult_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(diff_edges_maps[3], height=400, scrolling=False)
 
     st.markdown('---')
 
@@ -167,7 +231,7 @@ def question_2(zone, df):
     st.markdown('---')
 
 # Question 3 function
-def question_3(zone, df):
+def question_3(zone, years_edges_maps):
     
     # Header
     st.header('Network of Paths Maps depending on the Year')
@@ -181,92 +245,61 @@ def question_3(zone, df):
 
     if zone != 'matagalls':
 
-        # Get all the years paths
-        path_2012 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2012_edges.html'
-        path_2013 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2013_edges.html'
-        path_2014 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2014_edges.html'
-        path_2015 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2015_edges.html'
-        path_2016 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2016_edges.html'
-        path_2017 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2017_edges.html'
-        path_2018 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2018_edges.html'
-        path_2019 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2019_edges.html'
-        path_2020 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2020_edges.html'
-        path_2021 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2021_edges.html'
-
         # Plot using rows
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 2012")
-            with open(path_2012, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[0], height=400, scrolling=False)
         with col2:
             st.markdown("#### 2013")
-            with open(path_2013, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[1], height=400, scrolling=False)
         
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 2014")
-            with open(path_2014, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[2], height=400, scrolling=False)
         with col2:
             st.markdown("#### 2015")
-            with open(path_2015, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[3], height=400, scrolling=False)
         
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 2016")
-            with open(path_2016, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[4], height=400, scrolling=False)
         with col2:
             st.markdown("#### 2017")
-            with open(path_2017, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[5], height=400, scrolling=False)
         
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 2018")
-            with open(path_2018, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[6], height=400, scrolling=False)
         with col2:
             st.markdown("#### 2019")
-            with open(path_2019, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[7], height=400, scrolling=False)
 
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("#### 2020")
-            with open(path_2020, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
+            html(years_edges_maps[8], height=400, scrolling=False)
         with col2:
             st.markdown("#### 2021")
-            with open(path_2021, "r", encoding="utf-8") as f:
-                html(f.read(), height=400, scrolling=False)
-
-    # Get the other years paths
-    path_2022 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2022_edges.html'
-    path_2023 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2023_edges.html'
-    path_2024 = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/2024_edges.html'
+            html(years_edges_maps[9], height=400, scrolling=False)
 
     # Row
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("#### 2022")
-        with open(path_2022, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
-
+        html(years_edges_maps[10], height=400, scrolling=False)
     with col2:
         st.markdown("#### 2023")
-        with open(path_2023, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(years_edges_maps[11], height=400, scrolling=False)
 
     # Row
-    col5, col6 = st.columns(2)
-    with col5:
+    col1, col2 = st.columns(2)
+    with col1:
         st.markdown("#### 2024")
-        with open(path_2024, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(years_edges_maps[12], height=400, scrolling=False)
 
     st.markdown('---')
 
@@ -278,7 +311,7 @@ def question_3(zone, df):
     st.markdown('---')
     
 # Question 4 function
-def question_4(zone, df):
+def question_4(zone, weather_edges_maps):
     
     # Header
     st.header('Network of Paths Maps depending on the Weather Condition')
@@ -291,43 +324,29 @@ def question_4(zone, df):
     
     st.markdown('---')
 
-    # Get all the paths
-    clear_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/clear_edges.html'
-    cloudy_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/cloudy_edges.html'
-    drizzle_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/drizzle_edges.html'
-    rain_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/rain_edges.html'
-    snow_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/clear_edges.html'
-
     # First row
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("#### Clear")
-        with open(clear_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
-
+        html(weather_edges_maps[0], height=400, scrolling=False)
     with col2:
         st.markdown("#### Cloudy")
-        with open(cloudy_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(weather_edges_maps[1], height=400, scrolling=False)
 
     # Second row
     col3, col4 = st.columns(2)
     with col3:
         st.markdown("#### Drizzle")
-        with open(drizzle_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
-
+        html(weather_edges_maps[2], height=400, scrolling=False)
     with col4:
         st.markdown("#### Rain")
-        with open(rain_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(weather_edges_maps[3], height=400, scrolling=False)
 
     # Third row
     col5, col6 = st.columns(2)
     with col5:
         st.markdown("#### Snow")
-        with open(snow_path, "r", encoding="utf-8") as f:
-            html(f.read(), height=400, scrolling=False)
+        html(weather_edges_maps[4], height=400, scrolling=False)
 
     st.markdown('---')
 
@@ -339,7 +358,7 @@ def question_4(zone, df):
     st.markdown('---')
 
 # Question 5 function
-def question_5(zone, df):
+def question_5(zone, diff_info_vis):
     
     # Header
     st.header('Difficulty Distribution and Correlation with Quantitative Variables')
@@ -352,13 +371,8 @@ def question_5(zone, df):
     
     st.markdown('---')
 
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Non-Spatial-Visualizations/difficulty_info.html'
-
     # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=1200, scrolling=False)
+    st.altair_chart(diff_info_vis, use_container_width=True)
 
     st.markdown('---')
 
@@ -370,7 +384,7 @@ def question_5(zone, df):
     st.markdown('---')
 
 # Question 6.1 function
-def question_6_1(zone, df):
+def question_6_1(zone, time_dist_vis):
 
     # Header
     st.header('Time distribution')
@@ -386,46 +400,30 @@ def question_6_1(zone, df):
     # Header
     st.markdown('#### Distribution of the Registered Tracks through the Time')
 
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Non-Spatial-Visualizations/time_distribution.html'
-
     # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=1000, scrolling=False)
+    st.altair_chart(time_dist_vis, use_container_width=True)
 
 # Question 6.2 function
-def question_6_2(zone, df):
+def question_6_2(zone, month_comp_vis):
 
     st.markdown('---')
 
     # Header
     st.markdown('#### Two Years Registered Tracks Comparison between Months')
 
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Non-Spatial-Visualizations/two_years_month_comp.html'
-
     # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=550, scrolling=False)
+    st.altair_chart(month_comp_vis, use_container_width=True)
 
 # Question 6.3 function
-def question_6_3(zone, df):
+def question_6_3(zone, weekday_comp_vis):
 
     st.markdown('---')
 
     # Header
     st.markdown('#### Two Years Registered Tracks Comparison between Weekdays')
 
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Non-Spatial-Visualizations/two_years_weekday_comp.html'
-
     # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=550, scrolling=False)
-
+    st.altair_chart(weekday_comp_vis, use_container_width=True)
     st.markdown('---')
 
     # Print the information
@@ -435,113 +433,51 @@ def question_6_3(zone, df):
 
     st.markdown('---')
 
-# Question 7 function
-def question_7(zone, df):
 
-    # Header
-    st.header('Weather and Registered Tracks Relation depending on one Year')
+def zone_questions_and_answers(zone, time_dist_vis, month_comp_vis, weekday_comp_vis, diff_info_vis, weather_vis, all_edges_map, diff_edges_maps, weather_edges_maps, years_edges_maps):
 
-    st.markdown('---')
-
-    # Introduction to the visualization
-    with open(f'{streamlit_data_path}/Text/General/intro_q7.txt', 'r', encoding='utf-8') as file:
-        content = file.read()
-        st.markdown(content)
-
-    st.markdown('---')
-
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Non-Spatial-Visualizations/weather_calendar.html'
-
-    # Show the path
-    with open(chart_path, "r", encoding="utf-8") as f:
-        chart_html = f.read()
-    html(chart_html, height=700, scrolling=False)
-
-    st.markdown('---')
-
-    # Print the information
-    with open(f'{streamlit_data_path}/Text/{zone}/answer_q7.txt', 'r', encoding='utf-8') as file:
-        content = file.read()
-    st.markdown(content)
-
-    st.markdown('---')
-
-# Function to create the q&a page for the zone
-def zone_questions_and_answers(zone, df):
-    
     st.subheader("Questions and Answers")
     st.markdown('---')
 
-    # Write introduction
+    # Introduction
     with open(f'{streamlit_data_path}/Text/General/intro_questions.txt', 'r', encoding='utf-8') as file:
         content = file.read()
         st.markdown(content)
 
-    st.markdown("---")
+    st.markdown('---')
 
-    # Question 1
-    with st.status("Which are the most commonly used start and end points in each zone, and which route segments are the most frequented? Can we identify areas where people frequently stop?", expanded=False):
-        
-        # Call the function
-        question_1(zone, df)
+    # Dictionary with questions and functions to execute
+    questions = {
+        "1. Most commonly used start and end points, frequent segments, and stop areas": lambda: question_1(zone, all_edges_map),
+        "2. Are some sections avoided depending on difficulty?": lambda: question_2(zone, diff_edges_maps),
+        "3. Does the usage of certain paths change over time?": lambda: question_3(zone, years_edges_maps),
+        "4. Are some paths used depending on the weather conditions?": lambda: question_4(zone, weather_edges_maps),
+        "5. Correlation between perceived difficulty and quantitative variables": lambda: question_5(zone, diff_info_vis),
+        "6. Evolution of recorded routes throughout the year": lambda: (question_6_1(zone, time_dist_vis), question_6_2(zone, month_comp_vis), question_6_3(zone, weekday_comp_vis)),
+        "7. Relationship between weather conditions and number of recorded routes": lambda: question_7(zone, weather_vis)}
 
-    st.markdown("---")
+    # Select box to select the question
+    selected_question = st.selectbox("Select a question to explore", list(questions.keys()))
 
-    # Question 2
-    with st.status("Are some sections avoided depending on difficulty?"):
+    st.markdown('---')
 
-        # Call the function
-        question_2(zone, df)
-
-    st.markdown("---")
-
-    # Question 3
-    with st.status("Does the usage of certain paths change over time?"):
-
-        # Call the function
-        question_3(zone, df)
-
-    st.markdown("---")
-
-    # Question 4
-    with st.status("Are some paths used depending on the weather conditions?"):
-
-        # Call the function
-        question_4(zone, df)
-
-    st.markdown("---")
-
-    # Question 5
-    with st.status("Can we correlate the perceived difficulty with different quantitative variables? What is the distribution of this variables?"):
-
-        # Call the function
-        question_5(zone, df)
-
-    st.markdown("---")
-
-    # Question 6
-    with st.status("How has the number of recorded routes evolved throughout the year, and which periods show the highest activity?"):
-
-        # Call the functions
-        question_6_1(zone, df)
-        question_6_2(zone, df)
-        question_6_3(zone, df)
-
-    st.markdown("---")
-    
-    # Question 7
-    with st.status("What is the relationship between weather conditions and the number of recorded routes?"):
-
-        # Call the function
-        question_7(zone, df)
+    # Mostrar respuesta al hacer clic
+    with st.spinner("Loading answer..."):
+        questions[selected_question]() 
 
 # Returns the track ID visualizations
 def track_visualizations(zone, df, track_id):
 
-    # Obtain the single track visualizations paths
+    # Obtain the single track map path and dataframes
     map_path = f'{streamlit_data_path}/Visualizations/{zone}/Single-Tracks-Visualizations/{track_id}_map.html'
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Single-Tracks-Visualizations/{track_id}_chart.html'
+    full_track_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Tracks-Output', 'All-Tracks', f'{track_id}.csv'))
+    track_km_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Tracks-Output', 'Partial-Km', f'{track_id}.csv'))
+    track_pace_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Tracks-Output', 'Partial-Pace', f'{track_id}.csv'))
+    track_edges_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Tracks-Output', 'Partial-Edges', f'{track_id}.csv'))
+
+    # General dataframes - all edges and waypoints
+    all_edges_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Data-Frames', 'Edges-Dataframes', 'all_edges.csv'))
+    waypoints_df = pd.read_csv(os.path.join(processing_data_path, zone, 'Output-Data', 'Data-Frames', 'waypoints.csv'))
 
     # Filter the dataframe to get only the track information
     track_info = df[df['track_id'] == track_id]
@@ -586,15 +522,9 @@ def track_visualizations(zone, df, track_id):
         # Insert title
         st.subheader(f'Elevation Profile and Pace Bars for the Track {track_id}')
 
-        # Explain the visualization
-        with open(f'{streamlit_data_path}/Text/General/intro_individual_vis1.txt', 'r', encoding='utf-8') as file:
-            content = file.read()
-        st.markdown(content)
-
-        # Show the visualization
-        with open(chart_path, "r", encoding="utf-8") as f:
-            chart_html = f.read()
-        html(chart_html, height=400, scrolling=False)
+        # Obtain the visualization and show it
+        elevation_vis = elevation_profile_and_pace_bars(full_track_df, track_km_df)
+        st.altair_chart(elevation_vis, use_container_width=True)
 
         st.markdown("---")
 
@@ -606,12 +536,10 @@ def track_visualizations(zone, df, track_id):
             content = file.read()
         st.markdown(content)
 
-        # Create the map
-        with open(map_path, "r", encoding="utf-8") as f:    # Read the html
-            map_html = f.read()
-
-        # Show the map
-        html(map_html, height=800, scrolling=False)
+        # Create the map and show it
+        track_map = create_track_map(track_id, df, all_edges_df, waypoints_df, full_track_df, track_km_df, track_pace_df, track_edges_df)
+        map_html = track_map._repr_html_()      # Map to HTML
+        html(map_html, height=800, scrolling=False)     # Show the map
 
         st.markdown('---')
 
