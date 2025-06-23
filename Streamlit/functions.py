@@ -3,6 +3,7 @@ import streamlit as st
 import altair as alt
 import sys
 import os
+from PIL import Image
 from streamlit.components.v1 import html
 
 # Define the data path
@@ -157,6 +158,24 @@ def zone_home_page(zone, df):
 
     st.subheader('Images of the Zone')
 
+    # Path with the images
+    path_images = os.path.join(streamlit_data_path, 'Images', zone)
+
+    # Filter valid extensions
+    valid_exts = ('.png', '.jpg', '.jpeg')
+    image_files = [f for f in os.listdir(path_images) if f.lower().endswith(valid_exts)]
+    image_files.sort()
+
+    # Create a grid 5x2 to show the images
+    cols = st.columns(2)  # 2 columns
+    for i in range(5):
+        for j in range(2):
+            idx = i * 2 + j
+            image_path = os.path.join(path_images, image_files[idx])
+            image = Image.open(image_path)
+            with cols[j]:
+                st.image(image, use_column_width=True)
+
     st.markdown('---')
 
 # Question 1 function
@@ -171,9 +190,6 @@ def question_1(zone, all_edges_map):
         content = file.read()
         st.markdown(content)
     st.markdown('---')
-
-    # HTML path
-    chart_path = f'{streamlit_data_path}/Visualizations/{zone}/Edges-Maps-Visualizations/all_edges_map.html'
 
     # Show the path
     html(all_edges_map, height=800, scrolling=False)
@@ -433,6 +449,30 @@ def question_6_3(zone, weekday_comp_vis):
 
     st.markdown('---')
 
+# Question 7 function
+def question_7(zone, weather_vis):
+
+    # Header
+    st.header('Weather Conditions Distribution')
+    st.markdown('---')
+
+    # Introduction to the visualization
+    with open(f'{streamlit_data_path}/Text/General/intro_q7.txt', 'r', encoding='utf-8') as file:
+        content = file.read()
+        st.markdown(content)
+    st.markdown('---')
+
+    # Show the path
+    html(weather_vis, height=800, scrolling=False)
+
+    st.markdown('---')
+
+    # Print the information
+    with open(f'{streamlit_data_path}/Text/{zone}/answer_q7.txt', 'r', encoding='utf-8') as file:
+        content = file.read()
+    st.markdown(content)
+
+    st.markdown('---')
 
 def zone_questions_and_answers(zone, time_dist_vis, month_comp_vis, weekday_comp_vis, diff_info_vis, weather_vis, all_edges_map, diff_edges_maps, weather_edges_maps, years_edges_maps):
 
@@ -448,13 +488,13 @@ def zone_questions_and_answers(zone, time_dist_vis, month_comp_vis, weekday_comp
 
     # Dictionary with questions and functions to execute
     questions = {
-        "1. Most commonly used start and end points, frequent segments, and stop areas": lambda: question_1(zone, all_edges_map),
+        "1. Which are the most commonly used start and end points in each area, and which route segments are the most frequented? Can we identify areas where people frequently stop?": lambda: question_1(zone, all_edges_map),
         "2. Are some sections avoided depending on difficulty?": lambda: question_2(zone, diff_edges_maps),
         "3. Does the usage of certain paths change over time?": lambda: question_3(zone, years_edges_maps),
         "4. Are some paths used depending on the weather conditions?": lambda: question_4(zone, weather_edges_maps),
-        "5. Correlation between perceived difficulty and quantitative variables": lambda: question_5(zone, diff_info_vis),
-        "6. Evolution of recorded routes throughout the year": lambda: (question_6_1(zone, time_dist_vis), question_6_2(zone, month_comp_vis), question_6_3(zone, weekday_comp_vis)),
-        "7. Relationship between weather conditions and number of recorded routes": lambda: question_7(zone, weather_vis)}
+        "5. Can we correlate the perceived difficulty with different quantitative variables? What is the distribution of these variables?": lambda: question_5(zone, diff_info_vis),
+        "6. How has the number of recorded routes evolved throughout the year, and which periods show the highest activity?": lambda: (question_6_1(zone, time_dist_vis), question_6_2(zone, month_comp_vis), question_6_3(zone, weekday_comp_vis)),
+        "7. What is the relationship between weather conditions and the number of recorded routes?": lambda: question_7(zone, weather_vis)}
 
     # Select box to select the question
     selected_question = st.selectbox("Select a question to explore", list(questions.keys()))
