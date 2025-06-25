@@ -61,7 +61,7 @@ mkdir Data
 
 ### 4. Download and unzip the data
 
-Download the dataset from the provided link and unzip it into the `Data` directory.
+Download the dataset from the provided [link](https://www.swisstransfer.com/d/bba6b0ff-23e7-44a2-8df5-7e886fa7514d) and unzip it into the `Data` directory. You will need a password for the download. Ask the creator for it.
 
 After unzipping, you should have the following structure:
 
